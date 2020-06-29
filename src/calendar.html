@@ -7,32 +7,44 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>Calendar | CoCreate</title>
 		
-		<!-- CoCreate UI -->
-		<!--<link rel="stylesheet" href="https://cdn.cocreate.app/CoCreateUI.min.css" type="text/css" />-->
-		<link rel="stylesheet" href="https://server.cocreate.app/css/CoCreateUI.min.css" type="text/css" />
-		<!--<link rel="stylesheet" href="https://server.cocreate.app/css/CoCreate-calendar.css" type="text/css" />-->
+		<!-- CoCreateCSS -->
+    <link rel="stylesheet" href="https://server.cocreate.app/CoCreateCSS/dist/CoCreate.min.css" type="text/css" />
+		
+		<!-- CoCreate Calendar -->
+		<link rel="stylesheet" href="./CoCreate-calendar.css" type="text/css" />
 		
 		<!-- Font Awesome -->
     	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" crossorigin="anonymous" />    
 	
 		<!-- Full Calendar -->
-		<link href='https://unpkg.com/@fullcalendar/core/main.css' rel='stylesheet' />
-		<link href='https://unpkg.com/@fullcalendar/daygrid/main.css' rel='stylesheet' />
-		<link href='https://unpkg.com/@fullcalendar/timegrid/main.css' rel='stylesheet' />
-		<link href='https://unpkg.com/@fullcalendar/timeline/main.css' rel='stylesheet' />
-		<link href='https://unpkg.com/@fullcalendar/resource-timeline/main.css' rel='stylesheet' />
-		<link href='https://unpkg.com/@fullcalendar/list/main.css' rel='stylesheet' />
-		<script src='https://unpkg.com/@fullcalendar/core/main.js'></script>
-		<script src='https://unpkg.com/@fullcalendar/interaction/main.js'></script>
-		<script src='https://unpkg.com/@fullcalendar/daygrid/main.js'></script>
-		<script src='https://unpkg.com/@fullcalendar/timegrid/main.js'></script>
-		<script src='https://unpkg.com/@fullcalendar/timeline/main.js'></script>
-		<script src='https://unpkg.com/@fullcalendar/resource-common/main.js'></script>
-		<script src='https://unpkg.com/@fullcalendar/resource-timeline/main.js'></script>
-		<script src='https://unpkg.com/@fullcalendar/list/main.js'></script>
-	
+		<!--<link href='https://unpkg.com/@fullcalendar/core/main.css' rel='stylesheet' />-->
+		<!--<link href='https://unpkg.com/@fullcalendar/daygrid/main.css' rel='stylesheet' />-->
+		<!--<link href='https://unpkg.com/@fullcalendar/timegrid/main.css' rel='stylesheet' />-->
+		<!--<link href='https://unpkg.com/@fullcalendar/timeline/main.css' rel='stylesheet' />-->
+		<!--<link href='https://unpkg.com/@fullcalendar/resource-timeline/main.css' rel='stylesheet' />-->
+		<!--<link href='https://unpkg.com/@fullcalendar/list/main.css' rel='stylesheet' />-->
+		<!--<script src='https://unpkg.com/@fullcalendar/core/main.js'></script>-->
+		<!--<script src='https://unpkg.com/@fullcalendar/interaction/main.js'></script>-->
+		<!--<script src='https://unpkg.com/@fullcalendar/daygrid/main.js'></script>-->
+		<!--<script src='https://unpkg.com/@fullcalendar/timegrid/main.js'></script>-->
+		<!--<script src='https://unpkg.com/@fullcalendar/timeline/main.js'></script>-->
+		<!--<script src='https://unpkg.com/@fullcalendar/resource-common/main.js'></script>-->
+		<!--<script src='https://unpkg.com/@fullcalendar/resource-timeline/main.js'></script>-->
+		<!--<script src='https://unpkg.com/@fullcalendar/list/main.js'></script>-->
+		
+		<link href='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/4.2.0/core/main.min.css' rel='stylesheet' />
+		<link href='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/4.2.0/daygrid/main.min.css' rel='stylesheet' />
+		<link href='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/4.2.0/list/main.min.css' rel='stylesheet' />
+		<link href='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/4.2.0/timegrid/main.min.css' rel='stylesheet' />
+
+		<script src='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/4.2.0/core/main.min.js'></script>
+		<script src='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/4.2.0/interaction/main.min.js'></script>
+		<script src='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/4.2.0/daygrid/main.min.js'></script>
+		<script src='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/4.2.0/timegrid/main.min.js'></script>
+		<script src='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/4.2.0/list/main.min.js'></script>
 	</head>
 	<body>
+		
 	    <!-- Navbar -->
 	    <div data-main_content_id="content" class="nav display-flex align-items-center bg-light-gray">
 	
@@ -49,11 +61,11 @@
 	        <ul class="cocreate-scroll display-inline-flex direction-rtl font-size-20px align-items-center list-style-type-none width-100-percent">
 	    			
 				<!-- Window Controls -->
-				<li class="margin-right-15px"><a class="btn-wnd-close"><i class="fas fa-times">
+				<li class="margin-right-15px"><a class="btn-modal-close"><i class="fas fa-times">
 				  </i></a></li>
-				<li class="margin-right-15px"><a class="btn-wnd-maximize"><i data-transform_to="far fa-window-restore" class="far fa-window-maximize">
+				<li class="margin-right-15px"><a class="btn-modal-maximize"><i data-transform_to="far fa-window-restore" class="far fa-window-maximize">
 				  </i></a></li>
-				<li class="margin-right-15px"><a class="btn-wnd-minimize"><i class="far fa-window-minimize">
+				<li class="margin-right-15px"><a class="btn-modal-minimize"><i class="far fa-window-minimize">
 				  </i></a></li>
 				
 				<!-- fullscreen toogle and icon transform-->
@@ -81,7 +93,19 @@
 	          
 	      		<!-- Render Form -->
 				<li class="margin-right-15px">
-					<a target="modal" href="render.html" data-pass_collection="modules" data-pass_prefix="form_" data-pass_document_id="5dc846ebcddd6b0de2c40b80" data-pass_to="render" data-modal_ajax="false" data-modal_width="320px" data-modal_height="100%" data-modal_color="#229954" data-modal_x="" data-modal_y="" data-pass_id="render">
+					<a target="modal" href="./calendar_form.html" 
+						data-pass_collection="modules" 
+						data-pass_prefix="form_" 
+						data-pass_document_id="" 
+						data-pass_to="render" 
+						data-modal_ajax="false" 
+						data-modal_width="320px" 
+						data-modal_height="100%" 
+						data-modal_color="#229954" 
+						data-modal_header="false"
+						data-modal_x="" 
+						data-modal_y="" 
+						data-pass_id="render">
 						<i class="fas fa-plus"></i>
 					</a>
 				</li>
@@ -102,27 +126,29 @@
 	
 			</ul>
 	    </div>
+	    <!-- Define data-filter_name to define field to filter results for calendar -->
 		<div data-calendar_id="calendar" data-filter_name="start_date" data-filter_value="0" data-filter_operator="gt"></div>
 
-		<div class="cocreate-container" id="customVPhere" data-main_content_id="content">
+		<div class="cocreate-container padding-10px" id="modal-viewport" data-main_content_id="content">
 			<div id='calendar-container' class="">  
 			  <div id='calendar' class="cal-container" 
-				data-fetch_collection="" 
+				data-fetch_collection="test" 
 				data-dispaly_field="name"
 				data-calendar_id="calendar"
 				data-fetch_name=""
 				data-fetch_value=""
 				data-pass_id="render">
 				<a class="eventLink"
-				  	target="modal" href="render.html" 
-			  		data-pass_collection="modules"
+				  	target="modal" href="https://server.CoCreate.app/CoCreate-components/CoCreate-calendar/src/calendar_form.html" 
+			  		data-pass_collection="test"
 			  		data-pass_document_id=""
 			  		data-pass_prefix="form_" 
-			  		data-pass_to="me12345"	
+			  		data-pass_to="form-fields"	
 			  		data-modal_ajax="false" 
 					data-modal_width="320px" 
 					data-modal_height="100%" 
 					data-modal_color="#21618C"
+					data-modal_header="false"
 					data-modal_x="" 
 					data-modal_y="">
 	  			</a>
@@ -130,70 +156,7 @@
 			</div>
 		</div>
 	  	
-	  	<div id="menuL" class="cocreate-sidenav" 
-	  		data-main_content="content"
-	  		sidenav_default_desktop="offcanvas"
-	  		sidenav_default_tablet="offcanvas">
-	        <div class="adminUI-search"> 
-	        	<form id='menu-search'
-	        	    data-template_id='template1' 
-	        		data-realtime='false' 
-	        		data-search_collection="module_activity" 
-	        		data-search_module=''>
-	                <div class="icondiv">
-	                  <input type="text" class="searchInput withicon browser-default">
-	                  <span class="searchBtn">  
-	                    <a target="modal" href="searchresult.html"
-	        			   data-pass_to="me1234" 
-	        			   data-modal_ajax="false" 
-	        			   data-modal_width="900px" 
-	        			   data-modal_height="100%" 
-	        			   data-modal_color="#229954"
-	        			   data-modal_x="" 
-	        			   data-modal_y="">
-	                    </a>
-	                      <i class="fa fa-search"></i>
-	                  </span>
-	                </div>
-	        	</form>
-	        </div>
-				
-			<ul class="cocreate-scroll vh-100">
-				<div data-fetch_collection="modules" 
-				    data-order_by="menu-position" 
-					data-order_type="asc"
-					data-exclusion_name="menu-position"
-					data-exclusion_type="number"
-					data-exclusion_value="0"
-					data-template_id="template1"
-					data-pass_to="me1234" 
-					id="admin-menu" 
-					class="template-wrapper">
-	
-	  			  <li class="template menuItem" id="template1">
-	  				  <a target="modal" href="render.html"
-	  				     data-pass_collection="modules"
-	  				     data-pass_document_id=""
-	  				    
-	  				     data-pass_prefix="datatable_"
-	  				     data-pass_to="render"
-	  				     data-modal_ajax="false"
-	  				     data-modal_width="900px"
-	  				     data-modal_height="100%"
-	  				     data-modal_color="#229954"
-	  				     data-modal_x=""
-	  				     data-modal_y="">
-	  					<span data-document_id="" name="icon" passed_id="me1234"></span><span data-document_id="" name="name" passed_id="me1234" ></span>
-			         </a>
-	    				  <div class="float-right">
-	    				    <a target="modal" href="render.html" data-pass_collection="modules" data-pass_document_id="" data-pass_prefix="form_" data-pass_to="render" data-modal_ajax="false" data-modal_width="900px" data-modal_height="100%" data-modal_color="#229954" data-modal_x="" data-modal_y="" data-pass_id="render"><i class="fas fa-plus"></i></a>
-	    				  </div>
-	  				</li>
-				</div>
-	  		</ul>
-			    <div class="resizeHandler"></div>
-	    </div>
-	
+
     <script>
       var config = {
         apiKey: 'c2b08663-06e3-440c-ef6f-13978b42883a',
@@ -201,13 +164,18 @@
         organization_Id: '5de0387b12e200ea63204d6c'
       }
     </script>
-   
+
+	<!-- CoCreateJS -->
     <!--<script src="https://cdn.cocreate.app/CoCreate.min.js"></script>-->
-  
-    <script src="https://server.cocreate.app/CoCreateJS/dist/CoCreate.min.js"></script>
+    <script src="https://server.cocreate.app/js/CoCreate.min.js"></script>
+	<!-- CoCreateUI -->
     <script src="https://cdn.cocreate.app/CoCreateUI.min.js"></script>
-    <script src="https://server.cocreate.app/CoCreate-components/CoCreate-calendar/CoCreate-calendar.js"></script>
-    <script src="https://server.cocreate.app/CoCreate-components/CoCreate-select/CoCreate-select.js"></script>
-  
+	
+	<!-- CoCreate Calendar -->
+    <script src="./CoCreate-calendar.js"></script>
+
+	<!-- CoCreate Modal -->
+    <script src="https://server.cocreate.app/CoCreate-components/CoCreate-modal/src/CoCreate-modal.js"></script>
+
   </body>
 </html>

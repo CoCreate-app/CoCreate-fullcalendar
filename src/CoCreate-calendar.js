@@ -9,10 +9,6 @@ function initSocketsForCalendars() {
       updateCalendar(data);
     })
     
-    CoCreateSocket.listen('createDocument', function(data) {
-      createdDocumentForCalandar(data);
-    })
-    
     CoCreateSocket.listen('deleteDocument', function (data) {
       deleteDocumentForCalendar(data);
     })
@@ -153,45 +149,6 @@ function renderDataToCalendar(calObj, data) {
   calObj.calendar.addEventSource(eventSource);
 }
 
-function createdDocumentForCalandar(data) {
-  
-  var collection = data['collection'];
-
-  if (!data.data) return;
-  
-  let created_data = data.data;  
-  for (var i = 0; i < calOBJs.length; i++) {
-    var calObj = calOBJs[i];
-    
-    if (calObj.filter.collection == collection) {
-      var eventSource = new Array();
-      
-      if ((collection == 'module_activity' && (!calObj.data_module_id || created_data['data-document_id'] == calObj.data_module_id)) || (collection != 'module_activity')) {
-        var newEvent = new Object();
-        newEvent.id = created_data['_id'];
-        newEvent.title = getTitle(created_data, calObj.displayName);
-        
-        newEvent.textColor = 'black';
-        newEvent.backgroundColor = getRandomColor();
-        
-        //var date = getDate(createdItem);
-        
-        newEvent.start = created_data.start_date;
-        newEvent.end = created_data.end_date;
-        
-        if (created_data.start_time) newEvent.start+= 'T' + created_data.start_time;
-        if (created_data.end_time) newEvent.end+= 'T' + created_data.end_time;
-  
-        
-        if (created_data.start_date && created_data.end_date) eventSource.push(newEvent);
-      }
-      
-      calObj.calendar.addEventSource(eventSource);
-    
-    }
-  }
-}
-
 function getRandomColor() {
   var number = Math.floor(Math.random() * randomColors.length);
   return randomColors[number % (randomColors.length)];
@@ -237,11 +194,11 @@ function updateCalendar(data) {
     
     if (calObj.filter.collection ==  collection) {
       var calendar = calObj.calendar;
+      var eventSource = [];
       
       var event = calendar.getEventById(data['document_id']);
       if (event) {
-        console.log(event);
-        
+
         var start = event.start;
         var end = event.end;
         var start_date = getDateString(start);
@@ -278,9 +235,33 @@ function updateCalendar(data) {
         
         event.setStart(start_date + 'T' + start_time);
         event.setEnd(end_date + 'T' + end_time);
+      } else {
+        let newEvent = createEventItem(data['data'], calObj.displayName);
+        if (newEvent) {
+          eventSource.push(newEvent)
+          calendar.addEventSource(eventSource);
+        }
+        
       }
     }
   }
+}
+
+function createEventItem(data, displayName) {
+  var newEvent = new Object();
+  newEvent.id = data['_id'];
+  newEvent.title = getTitle(data, displayName);
+  newEvent.textColor = 'black';
+  newEvent.backgroundColor = getRandomColor();
+  newEvent.start = data.start_date;
+  newEvent.end = data.end_date;
+  if (data.start_time) newEvent.start+= 'T' + data.start_time;
+  if (data.end_time) newEvent.end+= 'T' + data.end_time;
+  
+  if (!data.start_date || !data.end_date) {
+    return null;
+  }  
+  return newEvent;
 }
 
 
@@ -308,15 +289,11 @@ function eventClicked(info) {
   
   var calendar = event._calendar;
   var cal_el = calendar.el;
-  var id = cal_el.id;
 
-  var collection = cal_el.getAttribute('data-collection');
-  collection = collection ? collection : 'module_activity';
-  
   var eventLink = cal_el.querySelector('.eventLink');
   
   eventLink.setAttribute('data-pass_document_id', eventId);
-
+  CoCreateLogic.initDataPassValues();
   CoCreateLogic.setLinkProcess(eventLink);
 }
 
@@ -401,22 +378,21 @@ function selectedDates(info) {
   var startTime = getTimeString(info.start);
   var endTime = getTimeString(info.end);
   
-  var cal_id = info.event._calendar.el.id
+  var cal_id = info.view.calendar.el.id
   var calObj = getCalObjById(cal_id);
   if (calObj) {
     
-    CoCreate.createDocument({
-      "collection" : calObj.filter.collection, 
-      "element" : cal_id, 
-      "metadata" : "",
-      "data" :{
-        'organization_id': config.organization_Id,
-        'start_date': startDate,
-        'end_date': endDate,
-        'start_time': startTime,
-        'end_time': endTime
-      }
-    })
+    const eventLink = info.view.calendar.el.querySelector('.eventLink');
+    
+    eventLink.setAttribute('data-pass_document_id', "");
+    CoCreateLogic.setDataPassValues({
+      start_date: startDate,
+      end_date: endDate,
+      start_time: startTime,
+      end_time: endTime
+    });
+  
+    CoCreateLogic.setLinkProcess(eventLink);
   }
 }
 

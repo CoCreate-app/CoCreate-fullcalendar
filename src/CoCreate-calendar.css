@@ -6,7 +6,7 @@
   height:100%;
 }
 .fc-toolbar.fc-header-toolbar{
-	margin-bottom:10px;
+	margin-bottom:10px!important;
 }
 
 td.fc-event-container{

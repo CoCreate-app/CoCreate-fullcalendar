@@ -5,16 +5,17 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="https://cdn.cocreate.app/favicon.ico" type="image/ico" sizes="16x16">
     <title>Calendar Form | CoCreate</title>
 
     <!--<link rel="stylesheet" href="https://cdn.cocreate.app/CoCreate.min.css" type="text/css" />-->
-    <link rel="stylesheet" href="https://server.cocreate.app/css/CoCreateUI.min.css" type="text/css" />
+    <link rel="stylesheet" href="https://server.cocreate.app/css/CoCreate.min.css" type="text/css" />
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" crossorigin="anonymous" />    
   </head>
 
   <body>
-  <div id="customVPhere" class="hidden"></div>
+  <div id="modal-viewport" class="hidden"></div>
     <div class="nav display-flex align-items-center bg-light-gray"
       data-main_content_id="content" 
       data-nav_effect="sticky-nav" 
@@ -22,13 +23,13 @@
       
       <ul class="cocreate-scroll display-inline-flex direction-rtl font-size-20px align-items-center list-style-type-none width-100-percent height-50px">
   			<li class="margin-right-15px">
-  			  <a class="btn-wnd-close"><i class="fas fa-times"></i></a>
+  			  <a class="btn-modal-close"><i class="fas fa-times"></i></a>
   			</li>
   			<li class="margin-right-15px">
-  			  <a class="btn-wnd-maximize"><i data-transform_to="far fa-window-restore" class="far fa-window-maximize"></i></a>
+  			  <a class="btn-modal-maximize"><i data-transform_to="far fa-window-restore" class="far fa-window-maximize"></i></a>
   			</li>
   			<li class="margin-right-15px">
-  			  <a class="btn-wnd-minimize"><i class="far fa-window-minimize"></i></a>
+  			  <a class="btn-modal-minimize"><i class="far fa-window-minimize"></i></a>
   			</li>
   			<li class="margin-right-15px">
   			  <a class="fs-toggle"><i data-transform_to="fas fa-compress" class="fas fa-expand"></i></a>
@@ -54,7 +55,7 @@
   			  <a data-collection="modules" 
   			    data-document_id="" 
   			    data-pass_id="form-fields" 
-  			    class="delete-document btn-wnd-close">
+  			    class="delete-document btn-modal-close">
   			     <i class="far fa-trash-alt"></i>
 		      </a>
   			</li>
@@ -62,7 +63,7 @@
     </div>
     
 		<div class="cocreate-container padding-10px" data-main_content_id="content">
-      <form data-realtime="true" data-collection="module_activity" data-form_id="module-form" class="mbottom-75">
+      <form data-realtime="true" data-collection="test" class="margin-bottom-75px">
         
         <input type="text" 
           data-document_id="" 
@@ -82,13 +83,33 @@
         <input type="date" 
           class="floating-label" 
           placeholder="Date" 
-          name="date" id="date"  
+          name="start_date" id="start_date"
+          data-pass_id="form-fields" 
+          data-pass_value_id="start_date"
           data-document_id="">
         
         <input type="time" 
           class="floating-label" 
           placeholder="Time" 
-          name="time" id="time"  
+          name="start_time" id="start_time"
+          data-pass_id="form-fields"
+          data-pass_value_id="start_time"
+          data-document_id="">
+        
+        <input type="date" 
+          class="floating-label" 
+          placeholder="Date" 
+          name="end_date" id="end_date"  
+          data-pass_id="form-fields" 
+          data-pass_value_id="end_date"
+          data-document_id="">
+        
+        <input type="time" 
+          class="floating-label" 
+          placeholder="Time" 
+          name="end_time" id="end_time" 
+          data-pass_id="form-fields" 
+          data-pass_value_id="end_time"
           data-document_id="">
 
         	<a class="submitBtn position-fixed bottom-15px right-15px padding-15px bg-blue grow-hover round"><i class="far fa-save"></i></a>
@@ -108,8 +129,8 @@
   
     <script src="https://server.cocreate.app/js/CoCreate.min.js"></script>
     <script src="https://server.cocreate.app/js/CoCreateUI.min.js"></script>
-    <script src="https://server.cocreate.app/CoCreate-components/CoCreate-select/CoCreate-select.js"></script>
-    <script src="https://server.cocreate.app/CoCreate-components/CoCreate-modal/CoCreate-modal.js"></script>
+    <script src="https://server.cocreate.app/CoCreate-components/CoCreate-select/src/CoCreate-select.js"></script>
+    <script src="https://server.cocreate.app/CoCreate-components/CoCreate-modal/src/CoCreate-modal.js"></script>
 
   </body>
 </html>
