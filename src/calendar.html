@@ -46,7 +46,7 @@
 	<body>
 		
 	    <!-- Navbar -->
-	    <div data-main_content_id="content" class="nav display-flex align-items-center bg-light-gray">
+	    <div data-main_content_id="content" class="nav display:flex align-items-center bg-light-gray">
 	
 			<!-- Menu Icon Animations -->
 			<a class="nav-toggle menu_icon--Vdots" data-toggle_sidenav="menuL">
@@ -58,22 +58,22 @@
 			</a>
 	
 	        <!-- Horizontal Scroll Nav/Tabs -->
-	        <ul class="cocreate-scroll display-inline-flex direction-rtl font-size-20px align-items-center list-style-type-none width-100-percent">
+	        <ul class="cocreate-scroll display:inline-flex direction:rtl font-size:20px align-items-center list-style-type-none width:100%">
 	    			
 				<!-- Window Controls -->
-				<li class="margin-right-15px"><a class="btn-modal-close"><i class="fas fa-times">
+				<li class="margin-right:15px"><a class="btn-modal-close"><i class="fas fa-times">
 				  </i></a></li>
-				<li class="margin-right-15px"><a class="btn-modal-maximize"><i data-transform_to="far fa-window-restore" class="far fa-window-maximize">
+				<li class="margin-right:15px"><a class="btn-modal-maximize"><i data-transform_to="far fa-window-restore" class="far fa-window-maximize">
 				  </i></a></li>
-				<li class="margin-right-15px"><a class="btn-modal-minimize"><i class="far fa-window-minimize">
+				<li class="margin-right:15px"><a class="btn-modal-minimize"><i class="far fa-window-minimize">
 				  </i></a></li>
 				
 				<!-- fullscreen toogle and icon transform-->
-				<li class="margin-right-15px"><a class="fs-toggle"><i data-transform_to="fas fa-compress" class="fas fa-expand">
+				<li class="margin-right:15px"><a class="fs-toggle"><i data-transform_to="fas fa-compress" class="fas fa-expand">
 				  </i></a></li>
 				
 				<!-- Render Builder -->
-				<li class="margin-right-15px">
+				<li class="margin-right:15px">
 				 	<a target="modal" href="render.html"
 	          		   data-pass_collection="modules"
 		               data-pass_document_id=""
@@ -92,7 +92,7 @@
 				</li>
 	          
 	      		<!-- Render Form -->
-				<li class="margin-right-15px">
+				<li class="margin-right:15px">
 					<a target="modal" href="./calendar_form.html" 
 						data-pass_collection="modules" 
 						data-pass_prefix="form_" 
@@ -111,16 +111,16 @@
 				</li>
 				
 				<!-- Calendar Controls -->  
-				<li class="margin-right-15px">
+				<li class="margin-right:15px">
 					<a data-btn_type="timeGridDay" data-calendar_id="calendar"><i class="fas fa-calendar-day"></i></a>
 				</li>
-				<li class="margin-right-15px">
+				<li class="margin-right:15px">
 					<a data-btn_type="timeGridWeek" data-calendar_id="calendar"><i class="fas fa-calendar-week"></i></a>
 				</li>
-				<li class="margin-right-15px">
+				<li class="margin-right:15px">
 					<a data-btn_type="dayGridMonth" data-calendar_id="calendar"><i class="far fa-calendar-alt"></i></a>
 				</li>
-				<li class="margin-right-15px">
+				<li class="margin-right:15px">
 					<a data-btn_type="today" data-calendar_id="calendar">T</a>
 				</li>
 	
@@ -129,7 +129,7 @@
 	    <!-- Define data-filter_name to define field to filter results for calendar -->
 		<div data-calendar_id="calendar" data-filter_name="start_date" data-filter_value="0" data-filter_operator="gt"></div>
 
-		<div class="cocreate-container padding-10px" id="modal-viewport" data-main_content_id="content">
+		<div class="cocreate-container padding:10px" id="modal-viewport" data-main_content_id="content">
 			<div id='calendar-container' class="">  
 			  <div id='calendar' class="cal-container" 
 				data-fetch_collection="test" 
@@ -166,7 +166,7 @@
     </script>
 
 	<!-- CoCreateJS -->
-    <!--<script src="https://cdn.cocreate.app/CoCreate.min.js"></script>-->
+    <!--<script src="https://server.cocreate.app/js/CoCreate.min.js"></script>-->
     <script src="https://server.cocreate.app/js/CoCreate.min.js"></script>
 	<!-- CoCreateUI -->
     <script src="https://cdn.cocreate.app/CoCreateUI.min.js"></script>

@@ -55,10 +55,10 @@ function initCalendars(container) {
     let filter = g_cocreateFilter.setFilter(calContainer, "data-calendar_id", "calendar");
     if (!filter) continue;
     
-    if (CoCreateUtils.getInitialized(calContainer)) {
+    if (CoCreateInit.getInitialized(calContainer)) {
 			continue;
 		}
-		CoCreateUtils.setInitialized(calContainer)
+		CoCreateInit.setInitialized(calContainer)
 		
     
     var calendar = new FullCalendar.Calendar(calContainer, {
@@ -413,10 +413,10 @@ function initCalendarButtons(container) {
   for (var i=0; i < btns.length; i++) {
     var btn = btns[i];
     
-    if (CoCreateUtils.getInitialized(btn)) {
+    if (CoCreateInit.getInitialized(btn)) {
       continue;
     }
-    CoCreateUtils.setInitialized(btn);
+    CoCreateInit.setInitialized(btn);
     
     btn.addEventListener('click', function(e) {
       e.preventDefault();
