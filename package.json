@@ -1,5 +1,5 @@
 {
-  "name": "CoCreate-calendar",
+  "name": "CoCreate-fullcalendar",
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
@@ -9,12 +9,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/CoCreate-app/CoCreate-calendar.git"
+    "url": "git+https://github.com/CoCreate-app/CoCreate-fullcalendar.git"
   },
   "author": "Frank Pagan",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/CoCreate-app/CoCreate-calendar/issues"
+    "url": "https://github.com/CoCreate-app/CoCreate-fullcalendar/issues"
   },
-  "homepage": "https://github.com/CoCreate-app/CoCreate-calendar#readme"
+  "homepage": "https://github.com/CoCreate-app/CoCreate-fullcalendar#readme"
 }
