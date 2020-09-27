@@ -36,7 +36,7 @@ If you are interested in the future direction of this project, please take a loo
 
 
 <a name="about"></a>
-# About
+# About 
 
 CoCreate-fullcalendar is guided and supported by the CoCreate Developer Experience Team.
 
@@ -50,4 +50,6 @@ CoCreate-fullcalendar is maintained and funded by CoCreate. The names and logos 
 We encourage contribution to our libraries (you might even score some nifty swag), please see our [CONTRIBUTING](https://github.com/CoCreate-app/CoCreate-fullcalendar/blob/master/CONTRIBUTING.md) guide for details.
 
 # License
+[The MIT License (MIT)](https://github.com/CoCreate-app/CoCreate-fullcalendar/blob/master/LICENSE)
+
 [The MIT License (MIT)](https://github.com/CoCreate-app/CoCreate-fullcalendar/blob/master/LICENSE)
