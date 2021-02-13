@@ -1,6 +1,7 @@
 var calOBJs = [];
 var calendarElClass = 'cal-container';
-var randomColors = ['#09efc6', '#09ef1a', '#efec09', '#ef8609', '#ef6009', '#b609ef', '#ef0986', '#09efec', '#ecef09', '#09a6ef', '#076692',  '#c0b507', '#c04807', '#6b07c0', '#72aeb5', '#69811e', '#8d2b23'];
+const bgColors =  ['#09efc6', '#09ef1a', '#efec09', '#ef8609', '#ef6009', '#b609ef', '#ef0986', '#09efec', '#ecef09', '#09a6ef', '#076692',  '#c0b507', '#c04807', '#6b07c0', '#72aeb5', '#69811e', '#8d2b23'];
+const textColors =    ['#8c489f', '#f610e5', '#1013f6', '#1079f6', '#109ff6', '#49f610', '#10f679', '#f61013', '#1310f6', '#f65910', '#f8996c',  '#3f4af8', '#3fb7f8', '#94f83f', '#8d514a', '#fff', '#72d4dc'];
 
 
 function initSocketsForCalendars() {
@@ -21,7 +22,7 @@ function initSocketsForCalendars() {
 
 function fetchedCalendarData(data) {
   
-  let calObject = g_cocreateFilter.getObjectByFilterId(calOBJs, data['element']);
+  let calObject = CoCreate.filter.getObjectByFilterId(calOBJs, data['element']);
   if (calObject) {
     renderDataToCalendar(calObject, data)
   }
@@ -52,7 +53,7 @@ function initCalendars(container) {
     
     var displayName = calContainer.getAttribute('data-dispaly_field');
     
-    let filter = g_cocreateFilter.setFilter(calContainer, "data-calendar_id", "calendar");
+    let filter = CoCreate.filter.setFilter(calContainer, "data-calendar_id", "calendar");
     if (!filter) continue;
     
     if (CoCreateInit.getInitialized(calContainer)) {
@@ -63,12 +64,14 @@ function initCalendars(container) {
     
     var calendar = new FullCalendar.Calendar(calContainer, {
       plugins: [ 'interaction', 'dayGrid', 'timeGrid', 'resourceTimeline', 'timeline', 'list' ],
+      height: '100%',
       editable: true,
+      timeZone: 'local',
       eventResizableFromStart: true, 
       eventLimit: true,
       selectable: true,
       selectMirror: true,
-      height: 'parent',
+      // contentHeight: 1200,
       nowIndicator: true,
       selectMinDistance: 100,
       header: {
@@ -112,11 +115,11 @@ function initCalendars(container) {
     calContainer.addEventListener("changeFilterInput", function(e) {
       // removeOldData(eObj.el)
       //. calenar init
-      eObj.filter.startIndex = 0;
-      g_cocreateFilter.fetchData(eObj.filter);
+      calObj.filter.startIndex = 0;
+      CoCreate.filter.fetchData(calObj.filter);
     })
     
-    g_cocreateFilter.fetchData(filter);
+    CoCreate.filter.fetchData(filter);
 
     calOBJs.push(calObj);
   }
@@ -124,24 +127,22 @@ function initCalendars(container) {
 }
 
 function renderDataToCalendar(calObj, data) {
-  console.log(data);
   var eventSource = new Array();
   
   data['data'].forEach(function(item, index) {
-    var newEvent = new Object();
+    var newEvent = {};
+    const {bg_color, text_color} = getRandomColor()
     newEvent.id = item['_id'];
     newEvent.title = getTitle(item, calObj.displayName);
     
-    newEvent.textColor = 'black';
-    newEvent.backgroundColor = getRandomColor();
-    
-    //var date = getDate(item);
-    
+    newEvent.textColor = text_color;
+    newEvent.backgroundColor = bg_color;
+
     newEvent.start = item.start_date;
-    newEvent.end = item.end_date;
-    
+    newEvent.end = convertEndDateForRender(item.end_date, item.end_time, item.allDay);
+    newEvent.allDay = item.allDay;
     if (item.start_time) newEvent.start+= 'T' + item.start_time;
-    if (item.end_time) newEvent.end+= 'T' + item.end_time;
+    if (item.end_time) newEvent.end+= 'T' + item.end_time; 
     
     if (item.start_date && item.end_date) eventSource.push(newEvent);
   })
@@ -150,8 +151,8 @@ function renderDataToCalendar(calObj, data) {
 }
 
 function getRandomColor() {
-  var number = Math.floor(Math.random() * randomColors.length);
-  return randomColors[number % (randomColors.length)];
+  var number = Math.floor(Math.random() * bgColors.length);
+  return {bg_color: bgColors[number], text_color: textColors[number]};
 }
 
 function getTitle(doc, displayName) {
@@ -163,27 +164,6 @@ function getTitle(doc, displayName) {
   
   return title;
   
-}
-
-function getDate(doc) {
-  var startDate, endDate;
-  //var startDate = '2019-08-05', endDate = '2019-08-09';
-  
-  if (doc.inputs) {
-    for (var i=0; i < doc.inputs.length; i++) {
-      var input = doc.inputs[i];
-      if (input.name == 'start_date') {
-        startDate = input['value'];
-      } else if (input.name == 'end_date') {
-        endDate = input['value'];
-      }
-    }
-  }
-  
-  return {
-    startDate: startDate,
-    endDate: endDate
-  }
 }
 
 function updateCalendar(data) {
@@ -205,6 +185,7 @@ function updateCalendar(data) {
         var start_time = getTimeString(start);
         var end_date = getDateString(end);
         var end_time = getTimeString(end);
+        var allDay = event.allDay;
       
         var backgroundColor = event.backgroundColor;
         var textColor = event.textColor;
@@ -231,10 +212,17 @@ function updateCalendar(data) {
           if (key == 'end_time') {
             end_time = main_data[key];
           }
+          
+          if (key === 'allDay') {
+            allDay = main_data[key]
+          }
         }
         
+        end_date = convertEndDateForRender(end_date, end_time, allDay);
+        event.setAllDay(allDay);
         event.setStart(start_date + 'T' + start_time);
         event.setEnd(end_date + 'T' + end_time);
+        
       } else {
         let newEvent = createEventItem(data['data'], calObj.displayName);
         if (newEvent) {
@@ -249,12 +237,15 @@ function updateCalendar(data) {
 
 function createEventItem(data, displayName) {
   var newEvent = new Object();
+  const {bg_color, text_color} = getRandomColor()
   newEvent.id = data['_id'];
   newEvent.title = getTitle(data, displayName);
   newEvent.textColor = 'black';
-  newEvent.backgroundColor = getRandomColor();
+  newEvent.backgroundColor = bg_color;
+  newEvent.textColor = text_color;
   newEvent.start = data.start_date;
-  newEvent.end = data.end_date;
+  newEvent.end = convertEndDateForRender(data.end_date, data.end_time, data.allDay);
+  newEvent.allDay = data.allDay;
   if (data.start_time) newEvent.start+= 'T' + data.start_time;
   if (data.end_time) newEvent.end+= 'T' + data.end_time;
   
@@ -292,7 +283,14 @@ function eventClicked(info) {
 
   var eventLink = cal_el.querySelector('.eventLink');
   
-  eventLink.setAttribute('data-pass_document_id', eventId);
+  let els = eventLink.querySelectorAll("[data-pass_document_id]")
+  
+  els.forEach((el) => {
+    if (!el.getAttribute('data-pass_document_id')) {
+      el.setAttribute('data-pass_document_id', eventId);
+    }
+  })
+
   CoCreateLogic.initDataPassValues();
   CoCreateLogic.setLinkProcess(eventLink);
 }
@@ -306,15 +304,11 @@ function changedEvent(info) {
   var startTime = getTimeString(event.start);
   var endTime = getTimeString(event.end);
 
-  console.log(startDate, endDate);
-  
-  console.log(info);
-  
   var cal_id = event._calendar.el.id
   var calObj = getCalObjById(cal_id);
   if (calObj) {
 
-    CoCreate.updateDocument({
+    CoCreate.crud.updateDocument({
       'collection' : calObj.filter.collection,
       'element' : cal_id,
       'metadata': "",
@@ -383,8 +377,14 @@ function selectedDates(info) {
   if (calObj) {
     
     const eventLink = info.view.calendar.el.querySelector('.eventLink');
-    
-    eventLink.setAttribute('data-pass_document_id', "");
+    let els = eventLink.querySelectorAll("[data-pass_document_id]")
+  
+    els.forEach((el) => {
+      if (!el.getAttribute('data-pass_document_id')) {
+        el.setAttribute('data-pass_document_id', "");
+      }
+    })
+
     CoCreateLogic.setDataPassValues({
       start_date: startDate,
       end_date: endDate,
@@ -426,6 +426,17 @@ function initCalendarButtons(container) {
       calendarBtnClicked(calId, type);
     })
   }
+}
+
+function convertEndDateForRender(end, end_time, allDay)
+{
+  if (!allDay) {
+    return end;
+  }
+  return end;
+  let endDate = new Date(end);
+  endDate.setDate(endDate.getDate() + 1);
+  return endDate.toISOString().split('T')[0]
 }
 
 function calendarBtnClicked(calId, type) {
@@ -509,4 +520,21 @@ initCalendars();
 initCalendarButtons();
 
 CoCreateInit.register('CoCreateCalendar', window, initCalendars);
+// CoCreate.observer.init({
+// 	name: 'CoCreateCalendar', 
+// 	observe: ['subtree', 'childList'],
+// 	include: '[data-calendar_id]', 
+// 	callback: function(mutation) {
+// 		initCalendars(mutation.target)
+// 	}
+// })
+
 CoCreateInit.register('CoCreateCalendar_btn', window, initCalendarButtons)
+// CoCreate.observer.init({
+// 	name: 'CoCreateCalendarBtn', 
+// 	observe: ['subtree', 'childList'],
+// 	include: '[data-calendar_id][data-btn_type]', 
+// 	callback: function(mutation) {
+// 		initCalendarButtons(mutation.target)
+// 	}
+// })
