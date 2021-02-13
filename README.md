@@ -35,7 +35,7 @@ If you are interested in the future direction of this project, please take a loo
 
 
 <a name="about"></a>
-# About
+# About 
 
 CoCreate-fullcalendar is guided and supported by the CoCreate Developer Experience Team.
 
