@@ -1,3 +1,8 @@
+import crud from '@cocreate/crud-client';
+import ccfilter from '@cocreate/filter'
+import observer from '@cocreate/observer'
+import logic from '@cocreate/logic';
+
 var calOBJs = [];
 var calendarElClass = 'cal-container';
 const bgColors =  ['#09efc6', '#09ef1a', '#efec09', '#ef8609', '#ef6009', '#b609ef', '#ef0986', '#09efec', '#ecef09', '#09a6ef', '#076692',  '#c0b507', '#c04807', '#6b07c0', '#72aeb5', '#69811e', '#8d2b23'];
@@ -6,15 +11,15 @@ const textColors =    ['#8c489f', '#f610e5', '#1013f6', '#1079f6', '#109ff6', '#
 
 function initSocketsForCalendars() {
 
-    CoCreateSocket.listen('updateDocument', function(data) {
+    crud.listen('updateDocument', function(data) {
       updateCalendar(data);
     })
     
-    CoCreateSocket.listen('deleteDocument', function (data) {
+    crud.listen('deleteDocument', function (data) {
       deleteDocumentForCalendar(data);
     })
     
-    CoCreateSocket.listen('readDocumentList', function(data) {
+    crud.listen('readDocumentList', function(data) {
       fetchedCalendarData(data);
     })
 }
@@ -22,7 +27,7 @@ function initSocketsForCalendars() {
 
 function fetchedCalendarData(data) {
   
-  let calObject = CoCreate.filter.getObjectByFilterId(calOBJs, data['element']);
+  let calObject = ccfilter.getObjectByFilterId(calOBJs, data['element']);
   if (calObject) {
     renderDataToCalendar(calObject, data)
   }
@@ -53,13 +58,13 @@ function initCalendars(container) {
     
     var displayName = calContainer.getAttribute('data-dispaly_field');
     
-    let filter = CoCreate.filter.setFilter(calContainer, "data-calendar_id", "calendar");
+    let filter = ccfilter.setFilter(calContainer, "data-calendar_id", "calendar");
     if (!filter) continue;
     
-    if (CoCreateInit.getInitialized(calContainer)) {
+    if (observer.getInitialized(calContainer)) {
 			continue;
 		}
-		CoCreateInit.setInitialized(calContainer)
+		observer.setInitialized(calContainer)
 		
     
     var calendar = new FullCalendar.Calendar(calContainer, {
@@ -291,8 +296,8 @@ function eventClicked(info) {
     }
   })
 
-  CoCreateLogic.initDataPassValues();
-  CoCreateLogic.setLinkProcess(eventLink);
+  logic.initDataPassValues();
+  logic.setLinkProcess(eventLink);
 }
 
 function changedEvent(info) {
@@ -308,7 +313,7 @@ function changedEvent(info) {
   var calObj = getCalObjById(cal_id);
   if (calObj) {
 
-    CoCreate.crud.updateDocument({
+    crud.updateDocument({
       'collection' : calObj.filter.collection,
       'element' : cal_id,
       'metadata': "",
@@ -385,14 +390,14 @@ function selectedDates(info) {
       }
     })
 
-    CoCreateLogic.setDataPassValues({
+    logic.setDataPassValues({
       start_date: startDate,
       end_date: endDate,
       start_time: startTime,
       end_time: endTime
     });
   
-    CoCreateLogic.setLinkProcess(eventLink);
+    logic.setLinkProcess(eventLink);
   }
 }
 
@@ -413,10 +418,10 @@ function initCalendarButtons(container) {
   for (var i=0; i < btns.length; i++) {
     var btn = btns[i];
     
-    if (CoCreateInit.getInitialized(btn)) {
+    if (observer.getInitialized(btn)) {
       continue;
     }
-    CoCreateInit.setInitialized(btn);
+    observer.setInitialized(btn);
     
     btn.addEventListener('click', function(e) {
       e.preventDefault();
@@ -519,7 +524,7 @@ initSocketsForCalendars();
 initCalendars();
 initCalendarButtons();
 
-CoCreateInit.register('CoCreateCalendar', window, initCalendars);
+observer.register('CoCreateCalendar', window, initCalendars);
 // CoCreate.observer.init({
 // 	name: 'CoCreateCalendar', 
 // 	observe: ['subtree', 'childList'],
@@ -529,7 +534,7 @@ CoCreateInit.register('CoCreateCalendar', window, initCalendars);
 // 	}
 // })
 
-CoCreateInit.register('CoCreateCalendar_btn', window, initCalendarButtons)
+observer.register('CoCreateCalendar_btn', window, initCalendarButtons)
 // CoCreate.observer.init({
 // 	name: 'CoCreateCalendarBtn', 
 // 	observe: ['subtree', 'childList'],
