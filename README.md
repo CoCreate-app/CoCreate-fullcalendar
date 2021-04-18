@@ -9,7 +9,7 @@ A simple fullcalendar component in vanilla javascript. Easily configured using H
 
 ![CoCreate-fullcalendar](https://cdn.cocreate.app/docs/CoCreate-fullcalendar.gif)
 
-## [Docs & Demo](https://cocreate.app/docs/clone)
+## [Docs & Demo](https://cocreate.app/docs/fullcalendar)
 
 For a complete guide and working demo refer to the [doumentation](https://cocreate.app/docs/fullcalendar)
 
