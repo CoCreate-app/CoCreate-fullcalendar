@@ -1,3 +1,11 @@
+## [1.0.2](https://github.com/CoCreate-app/CoCreate-fullcalendar/compare/v1.0.1...v1.0.2) (2021-04-19)
+
+
+### Bug Fixes
+
+* ci and build process ([065b0c9](https://github.com/CoCreate-app/CoCreate-fullcalendar/commit/065b0c927b59aeb4f08739524b1c49b0b7463a35))
+* npm publish and cdn deployment ([57e55c0](https://github.com/CoCreate-app/CoCreate-fullcalendar/commit/57e55c0dd5dc3363d168343c763d0176ffd613d9))
+
 ## [1.0.1](https://github.com/CoCreate-app/CoCreate-fullcalendar/compare/v1.0.0...v1.0.1) (2021-03-29)
 
 
