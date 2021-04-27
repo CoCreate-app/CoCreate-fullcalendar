@@ -1,3 +1,10 @@
+## [1.0.4](https://github.com/CoCreate-app/CoCreate-fullcalendar/compare/v1.0.3...v1.0.4) (2021-04-27)
+
+
+### Bug Fixes
+
+* Update to readme, demo, added cdn scripts ([5121414](https://github.com/CoCreate-app/CoCreate-fullcalendar/commit/5121414ea7dfc9e206c070b0d68bfee6cde7fe9d))
+
 ## [1.0.3](https://github.com/CoCreate-app/CoCreate-fullcalendar/compare/v1.0.2...v1.0.3) (2021-04-23)
 
 
