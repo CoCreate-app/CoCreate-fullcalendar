@@ -1,3 +1,10 @@
+## [1.0.5](https://github.com/CoCreate-app/CoCreate-fullcalendar/compare/v1.0.4...v1.0.5) (2021-04-27)
+
+
+### Bug Fixes
+
+* add host in docs ([b27983e](https://github.com/CoCreate-app/CoCreate-fullcalendar/commit/b27983e6a8ff5108becc2850c9cb694e6cef8549))
+
 ## [1.0.4](https://github.com/CoCreate-app/CoCreate-fullcalendar/compare/v1.0.3...v1.0.4) (2021-04-27)
 
 
