@@ -10,7 +10,7 @@ module.exports = {
             "path": "./docs/index.html",
             "collection": "files",
             "document_id": "6028368f71064611a678a1a3",
-            "key": "html",
+            "key": "src",
             "data":{
                 "name": "fullcalendar Doc",
                 "domains": ["cocreate.app", "server.cocreate.app", "ws.cocreate.app"],
