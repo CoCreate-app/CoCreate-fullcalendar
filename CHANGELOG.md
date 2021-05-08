@@ -1,3 +1,10 @@
+## [1.0.6](https://github.com/CoCreate-app/CoCreate-fullcalendar/compare/v1.0.5...v1.0.6) (2021-05-08)
+
+
+### Bug Fixes
+
+* add css auto parse and save to docs. ([27e6789](https://github.com/CoCreate-app/CoCreate-fullcalendar/commit/27e67891074afbe6e3d169d058b6e63708028613))
+
 ## [1.0.5](https://github.com/CoCreate-app/CoCreate-fullcalendar/compare/v1.0.4...v1.0.5) (2021-04-27)
 
 
