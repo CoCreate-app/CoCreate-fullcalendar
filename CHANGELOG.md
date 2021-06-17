@@ -1,3 +1,10 @@
+## [1.0.7](https://github.com/CoCreate-app/CoCreate-fullcalendar/compare/v1.0.6...v1.0.7) (2021-06-17)
+
+
+### Bug Fixes
+
+* added header for seo ([f2d1f43](https://github.com/CoCreate-app/CoCreate-fullcalendar/commit/f2d1f4312c347093eedaf807f4c53e1b921e543f))
+
 ## [1.0.6](https://github.com/CoCreate-app/CoCreate-fullcalendar/compare/v1.0.5...v1.0.6) (2021-05-08)
 
 
