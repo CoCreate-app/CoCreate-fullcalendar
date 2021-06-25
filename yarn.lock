@@ -868,7 +868,7 @@
     "@babel/helper-validator-identifier" "^7.14.5"
     to-fast-properties "^2.0.0"
 
-"@cocreate/action@^1.0.0", "@cocreate/action@^1.1.9":
+"@cocreate/action@^1.0.0", "@cocreate/action@^1.1.10":
   version "1.1.10"
   resolved "https://registry.yarnpkg.com/@cocreate/action/-/action-1.1.10.tgz#1b2fe224cffec17abf16873049676c12b9cef3b5"
   integrity sha512-EquHIrZmBjfbK78tsoln4mw6xiYo9gMI8COiRSfeau/i+jE5Mg4/kz6j1RzzsN9t7SdGxZhZ3D+DnSvD24xpkQ==
@@ -876,7 +876,7 @@
     "@cocreate/docs" "^1.1.13"
     "@cocreate/hosting" "^1.1.3"
 
-"@cocreate/crud-client@^1.0.0", "@cocreate/crud-client@^1.1.8":
+"@cocreate/crud-client@^1.0.0", "@cocreate/crud-client@^1.1.9":
   version "1.1.9"
   resolved "https://registry.yarnpkg.com/@cocreate/crud-client/-/crud-client-1.1.9.tgz#df1434169dfa5f656d281461bfb2ad3842e9749a"
   integrity sha512-heNbIEwX6i2un+eIQDph7KYt81/9c1VlP0f+VfOA5/7PPNkCA3/Lo5UF76Qzze1JNvvThsQvCXxIA3++YJldKQ==
@@ -884,7 +884,7 @@
     "@cocreate/docs" "^1.0.0"
     "@cocreate/socket-client" "^1.0.0"
 
-"@cocreate/docs@^1.0.0", "@cocreate/docs@^1.1.13":
+"@cocreate/docs@^1.0.0", "@cocreate/docs@^1.1.13", "@cocreate/docs@^1.1.14":
   version "1.1.14"
   resolved "https://registry.yarnpkg.com/@cocreate/docs/-/docs-1.1.14.tgz#992e6e2e2d9b848e3ba65ff4f4abff07dc3ec6ab"
   integrity sha512-MBSzKticJG8bzfqdN/A1jyLaz5k140S3O6pcN67C1muYfqUpZGxA8Fb4MGZ8QlKjx90De8GgHvZ6XP/x3I4FXw==
@@ -896,7 +896,7 @@
     parse-html-comments "^1.3.1"
     ws "^7.3.1"
 
-"@cocreate/filter@^1.0.12":
+"@cocreate/filter@^1.0.13":
   version "1.0.13"
   resolved "https://registry.yarnpkg.com/@cocreate/filter/-/filter-1.0.13.tgz#3d8bf764b528aae477720ac815e6a0b351936604"
   integrity sha512-BcbYN3+HSYyCxZpb8dcsiCJXyYkFVBuZjwd6bHPXgFWK0rSp2U7pbvRK4ED1C5pxis4prEUryX66eXcnnXozFw==
@@ -916,7 +916,7 @@
     "@cocreate/socket-client" "^1.0.0"
     mime-types "^2.1.30"
 
-"@cocreate/logic@^1.0.13":
+"@cocreate/logic@^1.0.14":
   version "1.0.14"
   resolved "https://registry.yarnpkg.com/@cocreate/logic/-/logic-1.0.14.tgz#266f53e29e0de9bb7d60cb3abf22b6e12d618763"
   integrity sha512-/6gWYYvX8hcDtp9OYwmfwNU/SJvHQg1guiMhMjkM76lT44K4F+9eHI4GUWcNiRkbrJ7rt0ic8/vUdzAlTmVgeg==
@@ -927,7 +927,7 @@
     "@cocreate/observer" "^1.0.0"
     "@cocreate/utils" "^1.0.0"
 
-"@cocreate/observer@^1.0.0", "@cocreate/observer@^1.2.3":
+"@cocreate/observer@^1.0.0", "@cocreate/observer@^1.2.4":
   version "1.2.4"
   resolved "https://registry.yarnpkg.com/@cocreate/observer/-/observer-1.2.4.tgz#d54a364164e2d555e58b7a15223d674353332d1a"
   integrity sha512-90VeQv6B2V2dVlCGrDCTfbJjCnbHx0iRL/ETWKRmrijmkqgrbUTCHVCk8ABg5sCyL6bRPaTPaWzgdMiB24yQuQ==
