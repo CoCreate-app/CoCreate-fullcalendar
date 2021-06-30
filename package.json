@@ -1,6 +1,6 @@
 {
   "name": "@cocreate/fullcalendar",
-  "version": "1.0.10",
+  "version": "1.0.11",
   "description": "A simple fullcalendar component in vanilla javascript. Easily configured using HTML5 data-attributes and/or JavaScript API.",
   "keywords": [
     "fullcalendar",
@@ -51,7 +51,7 @@
     "clean-webpack-plugin": "^3.0.0",
     "file-loader": "^6.2.0",
     "html-webpack-plugin": "^4.5.0",
-    "mini-css-extract-plugin": "^1.5.0",    
+    "mini-css-extract-plugin": "^1.5.0",
     "style-loader": "^2.0.0",
     "terser-webpack-plugin": "^5.1.1",
     "webpack": "^5.24.4",
