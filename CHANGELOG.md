@@ -1,3 +1,11 @@
+## [1.0.14](https://github.com/CoCreate-app/CoCreate-fullcalendar/compare/v1.0.13...v1.0.14) (2021-07-13)
+
+
+### Bug Fixes
+
+* add yarn lockfile to git ignore ([78b6cc6](https://github.com/CoCreate-app/CoCreate-fullcalendar/commit/78b6cc66ab88e0cff20dcdd978552f648fcaabad))
+* remove yarn.lock ([1d82100](https://github.com/CoCreate-app/CoCreate-fullcalendar/commit/1d821005b133e8ba7c7403b8fff273c50a609740))
+
 ## [1.0.13](https://github.com/CoCreate-app/CoCreate-fullcalendar/compare/v1.0.12...v1.0.13) (2021-07-10)
 
 
