@@ -288,11 +288,11 @@ function eventClicked(info) {
 
   var eventLink = cal_el.querySelector('.eventLink');
   
-  let els = eventLink.querySelectorAll("[data-pass_document_id]")
+  let els = eventLink.querySelectorAll("[pass-document_id]")
   
   els.forEach((el) => {
-    if (!el.getAttribute('data-pass_document_id')) {
-      el.setAttribute('data-pass_document_id', eventId);
+    if (!el.getAttribute('pass-document_id')) {
+      el.setAttribute('pass-document_id', eventId);
     }
   })
 
@@ -382,11 +382,11 @@ function selectedDates(info) {
   if (calObj) {
     
     const eventLink = info.view.calendar.el.querySelector('.eventLink');
-    let els = eventLink.querySelectorAll("[data-pass_document_id]")
+    let els = eventLink.querySelectorAll("[pass-document_id]")
   
     els.forEach((el) => {
-      if (!el.getAttribute('data-pass_document_id')) {
-        el.setAttribute('data-pass_document_id', "");
+      if (!el.getAttribute('pass-document_id')) {
+        el.setAttribute('pass-document_id', "");
       }
     })
 
