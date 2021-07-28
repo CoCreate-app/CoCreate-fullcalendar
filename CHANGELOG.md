@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/CoCreate-app/CoCreate-fullcalendar/compare/v1.0.16...v1.1.0) (2021-07-28)
+
+
+### Features
+
+* add new is{attribute} system and remove data- from attributtes ([3d63b95](https://github.com/CoCreate-app/CoCreate-fullcalendar/commit/3d63b95e4fc1896c30d53b84f74310f5a96a0235))
+
 ## [1.0.16](https://github.com/CoCreate-app/CoCreate-fullcalendar/compare/v1.0.15...v1.0.16) (2021-07-17)
 
 
