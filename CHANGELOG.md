@@ -1,3 +1,10 @@
+## [1.1.1](https://github.com/CoCreate-app/CoCreate-fullcalendar/compare/v1.1.0...v1.1.1) (2021-07-28)
+
+
+### Bug Fixes
+
+* remove data- from fetch, pass and filter ([54fd3ab](https://github.com/CoCreate-app/CoCreate-fullcalendar/commit/54fd3ab626ea5de15d508f228404376cf618e885))
+
 # [1.1.0](https://github.com/CoCreate-app/CoCreate-fullcalendar/compare/v1.0.16...v1.1.0) (2021-07-28)
 
 
