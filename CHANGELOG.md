@@ -1,3 +1,11 @@
+## [1.1.2](https://github.com/CoCreate-app/CoCreate-fullcalendar/compare/v1.1.1...v1.1.2) (2021-08-02)
+
+
+### Bug Fixes
+
+* remove data- from attributes ([6348add](https://github.com/CoCreate-app/CoCreate-fullcalendar/commit/6348add78a199ddb19d00ef632a407d6220ab10c))
+* update data-fullscreen to fullscreen ([efd9d05](https://github.com/CoCreate-app/CoCreate-fullcalendar/commit/efd9d0562ab1aaf8463a3ee701db4ee9cd646b9a))
+
 ## [1.1.1](https://github.com/CoCreate-app/CoCreate-fullcalendar/compare/v1.1.0...v1.1.1) (2021-07-28)
 
 
