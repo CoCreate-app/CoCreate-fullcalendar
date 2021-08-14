@@ -1,3 +1,11 @@
+## [1.1.3](https://github.com/CoCreate-app/CoCreate-fullcalendar/compare/v1.1.2...v1.1.3) (2021-08-14)
+
+
+### Bug Fixes
+
+* replace data-transform with toggle ([4428d52](https://github.com/CoCreate-app/CoCreate-fullcalendar/commit/4428d52db470a975966eeab4c1a5b3de28f1c156))
+* update to  docs ([55511f7](https://github.com/CoCreate-app/CoCreate-fullcalendar/commit/55511f7e20ac332852c84893ad88919c49a14b11))
+
 ## [1.1.2](https://github.com/CoCreate-app/CoCreate-fullcalendar/compare/v1.1.1...v1.1.2) (2021-08-02)
 
 
