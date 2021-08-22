@@ -1,3 +1,10 @@
+## [1.1.6](https://github.com/CoCreate-app/CoCreate-fullcalendar/compare/v1.1.5...v1.1.6) (2021-08-22)
+
+
+### Bug Fixes
+
+* removed data- from main-content, clone, filter-value_type ([1b1d0c7](https://github.com/CoCreate-app/CoCreate-fullcalendar/commit/1b1d0c74fbfcd3ff1d2d5cb89b6d7581e9fe9c76))
+
 ## [1.1.5](https://github.com/CoCreate-app/CoCreate-fullcalendar/compare/v1.1.4...v1.1.5) (2021-08-22)
 
 
