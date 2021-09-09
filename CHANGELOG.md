@@ -1,3 +1,10 @@
+## [1.1.11](https://github.com/CoCreate-app/CoCreate-fullcalendar/compare/v1.1.10...v1.1.11) (2021-09-09)
+
+
+### Bug Fixes
+
+* CoCreate.config directory, path, name and  public ([c2d43b8](https://github.com/CoCreate-app/CoCreate-fullcalendar/commit/c2d43b8ea871732872cc517b9fe8efa5a8a14642))
+
 ## [1.1.10](https://github.com/CoCreate-app/CoCreate-fullcalendar/compare/v1.1.9...v1.1.10) (2021-09-08)
 
 
