@@ -1,3 +1,10 @@
+## [1.1.15](https://github.com/CoCreate-app/CoCreate-fullcalendar/compare/v1.1.14...v1.1.15) (2021-09-12)
+
+
+### Bug Fixes
+
+* update sidenav to use resize and toggle ([9451a7e](https://github.com/CoCreate-app/CoCreate-fullcalendar/commit/9451a7eea67ec194ae03938f343bafcf2828ef18))
+
 ## [1.1.14](https://github.com/CoCreate-app/CoCreate-fullcalendar/compare/v1.1.13...v1.1.14) (2021-09-09)
 
 
