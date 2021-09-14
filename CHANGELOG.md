@@ -1,3 +1,10 @@
+## [1.1.17](https://github.com/CoCreate-app/CoCreate-fullcalendar/compare/v1.1.16...v1.1.17) (2021-09-14)
+
+
+### Bug Fixes
+
+* add cocreate.app to domains ([6f8def2](https://github.com/CoCreate-app/CoCreate-fullcalendar/commit/6f8def291f8a0d9a26db857f59a80a594054a4d8))
+
 ## [1.1.16](https://github.com/CoCreate-app/CoCreate-fullcalendar/compare/v1.1.15...v1.1.16) (2021-09-13)
 
 
