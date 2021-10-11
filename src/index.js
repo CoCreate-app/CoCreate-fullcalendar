@@ -11,17 +11,21 @@ const textColors =    ['#8c489f', '#f610e5', '#1013f6', '#1079f6', '#109ff6', '#
 
 function initSocketsForCalendars() {
 
+    crud.listen('createDocument', function(data) {
+      updateCalendar(data);
+    });
+    
     crud.listen('updateDocument', function(data) {
       updateCalendar(data);
-    })
+    });
     
     crud.listen('deleteDocument', function (data) {
       deleteDocumentForCalendar(data);
-    })
+    });
     
     crud.listen('readDocumentList', function(data) {
       fetchedCalendarData(data);
-    })
+    });
 }
 
 
@@ -54,11 +58,11 @@ function initCalendars(container) {
     var id = calContainer.id;
     if (!id) continue;
     
-    var cal_id = calContainer.getAttribute('data-calendar_id');
+    var cal_id = calContainer.getAttribute('calendar_id');
     
-    var displayName = calContainer.getAttribute('data-dispaly_field');
+    var displayName = calContainer.getAttribute('event-name');
     
-    let filter = ccfilter.setFilter(calContainer, "data-calendar_id", "calendar");
+    let filter = ccfilter.setFilter(calContainer, "calendar_id", "calendar");
     if (!filter) continue;
     
     if (observer.getInitialized(calContainer)) {
@@ -121,10 +125,10 @@ function initCalendars(container) {
       // removeOldData(eObj.el)
       //. calenar init
       calObj.filter.startIndex = 0;
-      CoCreate.filter.fetchData(calObj.filter);
+      ccfilter.fetchData(calObj.filter);
     })
     
-    CoCreate.filter.fetchData(filter);
+    ccfilter.fetchData(filter);
 
     calOBJs.push(calObj);
   }
@@ -287,6 +291,9 @@ function eventClicked(info) {
   var cal_el = calendar.el;
 
   var eventLink = cal_el.querySelector('.eventLink');
+  if (eventLink.hasAttribute('pass-document_id')) {
+      eventLink.setAttribute('pass-document_id', eventId);
+  }  
   
   let els = eventLink.querySelectorAll("[pass-document_id]")
   
@@ -296,8 +303,9 @@ function eventClicked(info) {
     }
   })
 
-  logic.initDataPassValues();
-  logic.setLinkProcess(eventLink);
+  // logic.initDataPassValues();
+  logic.runLink(eventLink);
+  
 }
 
 function changedEvent(info) {
@@ -382,6 +390,9 @@ function selectedDates(info) {
   if (calObj) {
     
     const eventLink = info.view.calendar.el.querySelector('.eventLink');
+    if (eventLink.hasAttribute('pass-document_id')) {
+      eventLink.setAttribute('pass-document_id', "");
+    }    
     let els = eventLink.querySelectorAll("[pass-document_id]")
   
     els.forEach((el) => {
@@ -390,14 +401,36 @@ function selectedDates(info) {
       }
     })
 
-    logic.setDataPassValues({
-      start_date: startDate,
-      end_date: endDate,
-      start_time: startTime,
-      end_time: endTime
-    });
+    let passValues = [
+      {
+    			pass_value_to: 'start_date',
+					value: startDate
+      },
+      {
+    			pass_value_to: 'end_date',
+					value: endDate
+      },
+      {
+    			pass_value_to: 'start_time',
+					value: startTime
+      },
+      {
+    			pass_value_to: 'end_time',
+					value: endTime
+      }
+    ]
+    
+    window.localStorage.setItem('passedValues', JSON.stringify(passValues));
+
+    
+    // logic.setDataPassValues({
+    //   start_date: startDate,
+    //   end_date: endDate,
+    //   start_time: startTime,
+    //   end_time: endTime
+    // });
   
-    logic.setLinkProcess(eventLink);
+    logic.runLink(eventLink);
   }
 }
 
@@ -406,11 +439,11 @@ function initCalendarButtons(container) {
   if (!main_container.querySelectorAll) {
     return
   }
-  var btns = main_container.querySelectorAll('[data-calendar_id][data-btn_type]');
+  var btns = main_container.querySelectorAll('[calendar_id][calendar-view]');
   if (btns.length === 0 && 
     main_container != document && 
-    main_container.hasAttribute('data-btn_type') && 
-    main_container.hasAttribute('data-calendar_id')) 
+    main_container.hasAttribute('calendar-view') && 
+    main_container.hasAttribute('calendar_id')) 
     {
       btns = [main_container];
     }
@@ -418,15 +451,15 @@ function initCalendarButtons(container) {
   for (var i=0; i < btns.length; i++) {
     var btn = btns[i];
     
-    if (observer.getInitialized(btn)) {
-      continue;
-    }
-    observer.setInitialized(btn);
+    // if (observer.getInitialized(btn)) {
+    //   continue;
+    // }
+    // observer.setInitialized(btn);
     
     btn.addEventListener('click', function(e) {
       e.preventDefault();
-      var type = this.getAttribute('data-btn_type');
-      var calId = this.getAttribute('data-calendar_id');
+      var type = this.getAttribute('calendar-view');
+      var calId = this.getAttribute('calendar_id');
       
       calendarBtnClicked(calId, type);
     })
@@ -524,22 +557,22 @@ initSocketsForCalendars();
 initCalendars();
 initCalendarButtons();
 
-observer.register('CoCreateCalendar', window, initCalendars);
-// CoCreate.observer.init({
-// 	name: 'CoCreateCalendar', 
-// 	observe: ['subtree', 'childList'],
-// 	include: '[data-calendar_id]', 
-// 	callback: function(mutation) {
-// 		initCalendars(mutation.target)
-// 	}
-// })
+// observer.register('CoCreateCalendar', window, initCalendars);
+CoCreate.observer.init({
+	name: 'CoCreateCalendar', 
+	observe: ['addedNodes'],
+	include: '[calendar_id]', 
+	callback: function(mutation) {
+		initCalendars(mutation.target)
+	}
+})
 
-observer.register('CoCreateCalendar_btn', window, initCalendarButtons)
-// CoCreate.observer.init({
-// 	name: 'CoCreateCalendarBtn', 
-// 	observe: ['subtree', 'childList'],
-// 	include: '[data-calendar_id][data-btn_type]', 
-// 	callback: function(mutation) {
-// 		initCalendarButtons(mutation.target)
-// 	}
-// })
+// observer.register('CoCreateCalendar_btn', window, initCalendarButtons)
+CoCreate.observer.init({
+	name: 'CoCreateCalendarBtn', 
+	observe: ['addedNodes'],
+	include: '[calendar_id][calendar-view]', 
+	callback: function(mutation) {
+		initCalendarButtons(mutation.target)
+	}
+})
