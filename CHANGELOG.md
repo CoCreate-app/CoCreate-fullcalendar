@@ -1,3 +1,10 @@
+## [1.1.27](https://github.com/CoCreate-app/CoCreate-fullcalendar/compare/v1.1.26...v1.1.27) (2021-10-11)
+
+
+### Bug Fixes
+
+* bug when opening event then creating new event ([eb2e821](https://github.com/CoCreate-app/CoCreate-fullcalendar/commit/eb2e821fb6f21ce4208e2b980990d5fb46afd94c))
+
 ## [1.1.26](https://github.com/CoCreate-app/CoCreate-fullcalendar/compare/v1.1.25...v1.1.26) (2021-10-06)
 
 
