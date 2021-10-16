@@ -1,3 +1,10 @@
+## [1.1.33](https://github.com/CoCreate-app/CoCreate-fullcalendar/compare/v1.1.32...v1.1.33) (2021-10-16)
+
+
+### Bug Fixes
+
+* update socket package to fix bug in docs ([52a58e6](https://github.com/CoCreate-app/CoCreate-fullcalendar/commit/52a58e6d74266c002b1f15ef36b61f0a0e849097))
+
 ## [1.1.32](https://github.com/CoCreate-app/CoCreate-fullcalendar/compare/v1.1.31...v1.1.32) (2021-10-15)
 
 
