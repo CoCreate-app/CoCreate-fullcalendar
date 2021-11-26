@@ -1,3 +1,11 @@
+## [1.1.46](https://github.com/CoCreate-app/CoCreate-fullcalendar/compare/v1.1.45...v1.1.46) (2021-11-26)
+
+
+### Bug Fixes
+
+* docs sidenav width ([59c95cb](https://github.com/CoCreate-app/CoCreate-fullcalendar/commit/59c95cb0554ae294765f40c2933928fa46223c54))
+* updated action dependency to actions ([34f0800](https://github.com/CoCreate-app/CoCreate-fullcalendar/commit/34f08009484e5c248a2b669e611066e6a1874794))
+
 ## [1.1.45](https://github.com/CoCreate-app/CoCreate-fullcalendar/compare/v1.1.44...v1.1.45) (2021-11-23)
 
 
