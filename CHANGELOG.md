@@ -1,3 +1,10 @@
+## [1.1.52](https://github.com/CoCreate-app/CoCreate-fullcalendar/compare/v1.1.51...v1.1.52) (2022-01-01)
+
+
+### Bug Fixes
+
+* get-value attribute value now supports a selector added # to all values currently in get-value attributes ([26ec744](https://github.com/CoCreate-app/CoCreate-fullcalendar/commit/26ec7446bbd521b832f8083c49b82605a01f7baf))
+
 ## [1.1.51](https://github.com/CoCreate-app/CoCreate-fullcalendar/compare/v1.1.50...v1.1.51) (2021-12-15)
 
 
