@@ -1,3 +1,10 @@
+## [1.1.54](https://github.com/CoCreate-app/CoCreate-fullcalendar/compare/v1.1.53...v1.1.54) (2022-01-16)
+
+
+### Bug Fixes
+
+* updated saveDocument to save and createDocument replaced with save, reset ([3f745ad](https://github.com/CoCreate-app/CoCreate-fullcalendar/commit/3f745ad4ae3d23c6bb692a3a8c3571f5dec669e9))
+
 ## [1.1.53](https://github.com/CoCreate-app/CoCreate-fullcalendar/compare/v1.1.52...v1.1.53) (2022-01-16)
 
 
