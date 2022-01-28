@@ -178,8 +178,7 @@ function getTitle(doc, displayName) {
 function updateCalendar(data) {
   var collection = data['collection'];
   
-  for (var i=0; i<calOBJs.length; i++) {
-    var calObj = calOBJs[i];
+  for (let calObj of calOBJs.values()) {
     
     if (calObj.filter.collection ==  collection) {
       var calendar = calObj.calendar;
@@ -268,8 +267,7 @@ function createEventItem(data, displayName) {
 
 function deleteDocumentForCalendar(data) {
   const document_id = data['document_id']
-  for (var i = 0; i < calOBJs.length; i++) {
-    var calObj = calOBJs[i];
+  for (let calObj of calOBJs.values()) {
     
     if (calObj.filter.collection == data['collection']) {
       removeEvent(calObj.calendar, document_id);
@@ -318,7 +316,7 @@ function changedEvent(info) {
   var endTime = getTimeString(event.end);
 
   var cal_id = event._calendar.el.id
-  var calObj = getCalObjById(cal_id);
+  var calObj = calOBJs.get(cal_id);
   if (calObj) {
 
     crud.updateDocument({
@@ -366,18 +364,6 @@ function getTimeString(date) {
   return hour + ':' + min;
 }
 
-function getCalObjById(id) {
-  
-  
-  for (var i=0; i<calOBJs.length; i++) {
-    var calObj = calOBJs[i];
-    
-    if (id == calObj.eId) return calObj;
-  }
-  
-  return null;
-}
-
 function selectedDates(info) {
   var startDate = getDateString(info.start);
   var endDate = getDateString(info.end);
@@ -386,7 +372,7 @@ function selectedDates(info) {
   var endTime = getTimeString(info.end);
   
   var cal_id = info.view.calendar.el.id
-  var calObj = getCalObjById(cal_id);
+  var calObj = calOBJs.get(cal_id);
   if (calObj) {
     
     const eventLink = info.view.calendar.el.querySelector('.eventLink');
@@ -480,9 +466,8 @@ function convertEndDateForRender(end, end_time, allDay)
 function calendarBtnClicked(calId, type) {
   if (!calId) return;
   
-  for (var i=0; i<calOBJs.length; i++) {
-    var calObj = calOBJs[i];
-    
+  for (let calObj of calOBJs.values()) {
+
     if (calObj.eId == calId) {
       var calendar = calObj.calendar;
       
