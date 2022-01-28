@@ -3,7 +3,7 @@ import ccfilter from '@cocreate/filter'
 import observer from '@cocreate/observer'
 import logic from '@cocreate/logic';
 
-var calOBJs = [];
+var calOBJs = new Map();
 var calendarElClass = 'cal-container';
 const bgColors =  ['#09efc6', '#09ef1a', '#efec09', '#ef8609', '#ef6009', '#b609ef', '#ef0986', '#09efec', '#ecef09', '#09a6ef', '#076692',  '#c0b507', '#c04807', '#6b07c0', '#72aeb5', '#69811e', '#8d2b23'];
 const textColors =    ['#8c489f', '#f610e5', '#1013f6', '#1079f6', '#109ff6', '#49f610', '#10f679', '#f61013', '#1310f6', '#f65910', '#f8996c',  '#3f4af8', '#3fb7f8', '#94f83f', '#8d514a', '#fff', '#72d4dc'];
@@ -31,7 +31,7 @@ function initSocketsForCalendars() {
 
 function fetchedCalendarData(data) {
   
-  let calObject = ccfilter.getObjectByFilterId(calOBJs, data['element']);
+  let calObject = calOBJs.get(data['element']);
   if (calObject) {
     renderDataToCalendar(calObject, data)
   }
@@ -130,7 +130,7 @@ function initCalendars(container) {
     
     ccfilter.fetchData(filter);
 
-    calOBJs.push(calObj);
+    calOBJs.set(calObj);
   }
 
 }
