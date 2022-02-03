@@ -1,3 +1,10 @@
+## [1.1.58](https://github.com/CoCreate-app/CoCreate-fullcalendar/compare/v1.1.57...v1.1.58) (2022-02-03)
+
+
+### Bug Fixes
+
+* replaced show and hide class hidden with attribute hidden ([ff46db1](https://github.com/CoCreate-app/CoCreate-fullcalendar/commit/ff46db1eec9de8ef8d39f7bf3c2f13d6a90fcbb2))
+
 ## [1.1.57](https://github.com/CoCreate-app/CoCreate-fullcalendar/compare/v1.1.56...v1.1.57) (2022-02-01)
 
 
