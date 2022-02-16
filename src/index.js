@@ -1,7 +1,7 @@
 import crud from '@cocreate/crud-client';
 import ccfilter from '@cocreate/filter'
 import observer from '@cocreate/observer'
-import logic from '@cocreate/logic';
+import link from '@cocreate/link';
 
 var calOBJs = new Map();
 var calendarElClass = 'cal-container';
@@ -301,8 +301,8 @@ function eventClicked(info) {
     }
   })
 
-  // logic.initDataPassValues();
-  logic.runLink(eventLink);
+  // link.initDataPassValues();
+  link.runLink(eventLink);
   
 }
 
@@ -409,14 +409,14 @@ function selectedDates(info) {
     window.localStorage.setItem('passedValues', JSON.stringify(passValues));
 
     
-    // logic.setDataPassValues({
+    // link.setDataPassValues({
     //   start_date: startDate,
     //   end_date: endDate,
     //   start_time: startTime,
     //   end_time: endTime
     // });
   
-    logic.runLink(eventLink);
+    link.runLink(eventLink);
   }
 }
 

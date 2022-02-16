@@ -63,7 +63,7 @@
     "@cocreate/crud-client": "^1.4.47",
     "@cocreate/docs": "^1.2.69",
     "@cocreate/filter": "^1.6.7",
-    "@cocreate/logic": "^1.5.5",
+    "@cocreate/link": "^1.0.7",
     "@cocreate/observer": "^1.4.4"
   }
 }
