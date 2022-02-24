@@ -1,3 +1,10 @@
+## [1.1.62](https://github.com/CoCreate-app/CoCreate-fullcalendar/compare/v1.1.61...v1.1.62) (2022-02-16)
+
+
+### Bug Fixes
+
+* replace component logic with link ([5f8a44e](https://github.com/CoCreate-app/CoCreate-fullcalendar/commit/5f8a44e18639f995581059ab25998ff073fc40a8))
+
 ## [1.1.61](https://github.com/CoCreate-app/CoCreate-fullcalendar/compare/v1.1.60...v1.1.61) (2022-02-16)
 
 
