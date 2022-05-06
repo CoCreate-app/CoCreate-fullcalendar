@@ -1,3 +1,10 @@
+## [1.1.64](https://github.com/CoCreate-app/CoCreate-fullcalendar/compare/v1.1.63...v1.1.64) (2022-05-06)
+
+
+### Bug Fixes
+
+* update config organization_Id to organization_id ([fdb6f2f](https://github.com/CoCreate-app/CoCreate-fullcalendar/commit/fdb6f2f5b20fdb503635d311fe36f1f98074afbd))
+
 ## [1.1.63](https://github.com/CoCreate-app/CoCreate-fullcalendar/compare/v1.1.62...v1.1.63) (2022-02-24)
 
 
