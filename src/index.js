@@ -23,7 +23,7 @@ function initSocketsForCalendars() {
       deleteDocumentForCalendar(data);
     });
     
-    crud.listen('readDocumentList', function(data) {
+    crud.listen('readDocuments', function(data) {
       fetchedCalendarData(data);
     });
 }
