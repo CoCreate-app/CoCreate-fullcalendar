@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/CoCreate-app/CoCreate-fullcalendar/compare/v1.1.64...v1.2.0) (2022-05-14)
+
+
+### Features
+
+* function readDocumentList has been renamed to readDocuments ([7645b13](https://github.com/CoCreate-app/CoCreate-fullcalendar/commit/7645b130d03163517089d18a826ea005fa8b47e3))
+
 ## [1.1.64](https://github.com/CoCreate-app/CoCreate-fullcalendar/compare/v1.1.63...v1.1.64) (2022-05-06)
 
 
