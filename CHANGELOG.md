@@ -1,3 +1,10 @@
+## [1.2.1](https://github.com/CoCreate-app/CoCreate-fullcalendar/compare/v1.2.0...v1.2.1) (2022-05-19)
+
+
+### Bug Fixes
+
+* update document_id on link index.css ([2ae57bd](https://github.com/CoCreate-app/CoCreate-fullcalendar/commit/2ae57bdcfd0304c9e53d6835920878dc1d80441d))
+
 # [1.2.0](https://github.com/CoCreate-app/CoCreate-fullcalendar/compare/v1.1.64...v1.2.0) (2022-05-14)
 
 
