@@ -1,3 +1,12 @@
+## [1.2.3](https://github.com/CoCreate-app/CoCreate-fullcalendar/compare/v1.2.2...v1.2.3) (2022-06-12)
+
+
+### Bug Fixes
+
+* update dependencies ([a8f6ef4](https://github.com/CoCreate-app/CoCreate-fullcalendar/commit/a8f6ef45110be716a89ae7d06374d14f34885f33))
+* update docs css document_id ([e05eaf5](https://github.com/CoCreate-app/CoCreate-fullcalendar/commit/e05eaf5681e59c3b8ab868328b7cafc23d6145b3))
+* update modal btn to actions ([85ca6c2](https://github.com/CoCreate-app/CoCreate-fullcalendar/commit/85ca6c27d103a3fa01788d88fdaf7847b7cedc2d))
+
 ## [1.2.2](https://github.com/CoCreate-app/CoCreate-fullcalendar/compare/v1.2.1...v1.2.2) (2022-05-23)
 
 
