@@ -1,3 +1,10 @@
+## [1.2.4](https://github.com/CoCreate-app/CoCreate-fullcalendar/compare/v1.2.3...v1.2.4) (2022-06-13)
+
+
+### Bug Fixes
+
+* update modal btn to actions ([b15ef38](https://github.com/CoCreate-app/CoCreate-fullcalendar/commit/b15ef38b242f9be6128c4336b1634fa225f90e21))
+
 ## [1.2.3](https://github.com/CoCreate-app/CoCreate-fullcalendar/compare/v1.2.2...v1.2.3) (2022-06-12)
 
 
