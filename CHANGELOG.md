@@ -1,3 +1,10 @@
+## [1.2.7](https://github.com/CoCreate-app/CoCreate-fullcalendar/compare/v1.2.6...v1.2.7) (2022-09-29)
+
+
+### Bug Fixes
+
+* config renameed to CoCreateConfig ([3a8634d](https://github.com/CoCreate-app/CoCreate-fullcalendar/commit/3a8634dee2791eaf590c7f397b7871b115714307))
+
 ## [1.2.6](https://github.com/CoCreate-app/CoCreate-fullcalendar/compare/v1.2.5...v1.2.6) (2022-09-01)
 
 
