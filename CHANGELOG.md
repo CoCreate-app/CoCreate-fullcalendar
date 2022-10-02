@@ -1,3 +1,10 @@
+## [1.2.14](https://github.com/CoCreate-app/CoCreate-fullcalendar/compare/v1.2.13...v1.2.14) (2022-10-02)
+
+
+### Bug Fixes
+
+* bump @cocreate/hosting and @cocreate/socket-client ([fa06776](https://github.com/CoCreate-app/CoCreate-fullcalendar/commit/fa06776e14b30a6ac7b8a888230a0bf27f6ce411))
+
 ## [1.2.13](https://github.com/CoCreate-app/CoCreate-fullcalendar/compare/v1.2.12...v1.2.13) (2022-10-01)
 
 
