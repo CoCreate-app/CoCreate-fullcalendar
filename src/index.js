@@ -144,7 +144,7 @@ function initCalendars(container) {
 function renderDataToCalendar(calObj, data) {
   var eventSource = new Array();
   
-  data['data'].forEach(function(item, index) {
+  data.document.forEach(function(item, index) {
     var newEvent = {};
     const {bg_color, text_color} = getRandomColor()
     newEvent.id = item['_id'];
@@ -203,7 +203,7 @@ function updateCalendar(data) {
       
         var backgroundColor = event.backgroundColor;
         var textColor = event.textColor;
-        const main_data = data['data'];
+        const main_data = data.document;
         for (var key in main_data) {
           
           if (key ==  calObj.displayName) {
@@ -238,7 +238,7 @@ function updateCalendar(data) {
         event.setEnd(end_date + 'T' + end_time);
         
       } else {
-        let newEvent = createEventItem(data['data'], calObj.displayName);
+        let newEvent = createEventItem(data.document, calObj.displayName);
         if (newEvent) {
           eventSource.push(newEvent)
           calendar.addEventSource(eventSource);
