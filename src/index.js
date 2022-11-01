@@ -29,7 +29,7 @@ function initSocketsForCalendars() {
       deleteDocumentForCalendar(data);
     });
     
-    crud.listen('readDocuments', function(data) {
+    crud.listen('readDocument', function(data) {
       fetchedCalendarData(data);
     });
 }
@@ -127,7 +127,7 @@ function initCalendars(container) {
       filter: filter
     }
     
-    calContainer.addEventListener("changeFilterInput", function(e) {
+    calContainer.addEventListener("filterData", function(e) {
       // removeOldData(eObj.el)
       //. calenar init
       calObj.filter.startIndex = 0;
