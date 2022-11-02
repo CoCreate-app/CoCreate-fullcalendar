@@ -68,7 +68,7 @@ function initCalendars(container) {
     
     var displayName = calContainer.getAttribute('event-name');
     
-    let filter = ccfilter.setFilter(calContainer, "calendar_id", "calendar");
+    let filter = ccfilter.init(calContainer, "calendar_id", "calendar");
     if (!filter) continue;
     
     if (observer.getInitialized(calContainer)) {
