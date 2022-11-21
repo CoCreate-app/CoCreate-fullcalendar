@@ -1,3 +1,13 @@
+## [1.2.16](https://github.com/CoCreate-app/CoCreate-fullcalendar/compare/v1.2.15...v1.2.16) (2022-11-21)
+
+
+### Bug Fixes
+
+* renamed data.data to data.document ([aa658ad](https://github.com/CoCreate-app/CoCreate-fullcalendar/commit/aa658ad186d219bfbcdc14aeb2a86218fa492762))
+* renamed fiter.setFilter to filter.init ([d5824b0](https://github.com/CoCreate-app/CoCreate-fullcalendar/commit/d5824b0a710de559713b22c44b729e23a10e5802))
+* renamed readDocuments to readDocument and changeFilterInput to filterData ([c99e007](https://github.com/CoCreate-app/CoCreate-fullcalendar/commit/c99e007587f975726c7d0cae61a90677ed7bbba5))
+* update crud functions to receive an array of objects as the response ([22c6c42](https://github.com/CoCreate-app/CoCreate-fullcalendar/commit/22c6c4238f974f6f002cb12dd9d6a6dfad759479))
+
 ## [1.2.15](https://github.com/CoCreate-app/CoCreate-fullcalendar/compare/v1.2.14...v1.2.15) (2022-10-02)
 
 
