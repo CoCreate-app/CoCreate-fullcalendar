@@ -1,3 +1,10 @@
+## [1.2.19](https://github.com/CoCreate-app/CoCreate-fullcalendar/compare/v1.2.18...v1.2.19) (2022-11-21)
+
+
+### Bug Fixes
+
+* replaced document_id with document._id ([f0ed4f9](https://github.com/CoCreate-app/CoCreate-fullcalendar/commit/f0ed4f96a1ba29943d04ca49a876d6606e2fbbc9))
+
 ## [1.2.18](https://github.com/CoCreate-app/CoCreate-fullcalendar/compare/v1.2.17...v1.2.18) (2022-11-21)
 
 
