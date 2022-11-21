@@ -10,7 +10,7 @@ module.exports = {
             "collection": "files",
             "document_id": "6028368f71064611a678a1a3",
             "key": "src",
-            "data":{
+            "document": {
                 "name": "index.html",
                 "path": "/docs/fullcalendar/index.html",
                 "domains": [
