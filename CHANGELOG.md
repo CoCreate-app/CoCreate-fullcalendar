@@ -1,3 +1,10 @@
+## [1.2.21](https://github.com/CoCreate-app/CoCreate-fullcalendar/compare/v1.2.20...v1.2.21) (2022-11-22)
+
+
+### Bug Fixes
+
+* apply src: {{source}} to CoCreate.config ([6376448](https://github.com/CoCreate-app/CoCreate-fullcalendar/commit/6376448cbbeb4f6db3ac2ed7b3220d6da4ac3b57))
+
 ## [1.2.20](https://github.com/CoCreate-app/CoCreate-fullcalendar/compare/v1.2.19...v1.2.20) (2022-11-21)
 
 
