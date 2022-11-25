@@ -1,3 +1,11 @@
+## [1.2.25](https://github.com/CoCreate-app/CoCreate-fullcalendar/compare/v1.2.24...v1.2.25) (2022-11-25)
+
+
+### Bug Fixes
+
+* bump dependencies ([32dac81](https://github.com/CoCreate-app/CoCreate-fullcalendar/commit/32dac818e50a4a3011aa13f8cbe705ed8e5eb2e5))
+* CoCreate.crud.default removed bug causing default object ([5165b99](https://github.com/CoCreate-app/CoCreate-fullcalendar/commit/5165b9970c6c5049c64fee91f689e12736a069a1))
+
 ## [1.2.24](https://github.com/CoCreate-app/CoCreate-fullcalendar/compare/v1.2.23...v1.2.24) (2022-11-24)
 
 
