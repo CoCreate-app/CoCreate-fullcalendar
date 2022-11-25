@@ -1,13 +1,7 @@
-import CRUD from '@cocreate/crud-client';
+import crud from '@cocreate/crud-client';
 import ccfilter from '@cocreate/filter'
 import observer from '@cocreate/observer'
 import link from '@cocreate/link';
-
-let crud
-if (CRUD && CRUD.default)
-	crud = CRUD.default
-else
-	crud = CRUD
 
 var calOBJs = new Map();
 var calendarElClass = 'cal-container';
