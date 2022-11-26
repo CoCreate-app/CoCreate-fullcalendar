@@ -121,7 +121,7 @@ function initCalendars(container) {
       filter: filter
     }
     
-    calContainer.addEventListener("filterData", function(e) {
+    calContainer.addEventListener("fetchData", function(e) {
       // removeOldData(eObj.el)
       //. calenar init
       calObj.filter.startIndex = 0;
