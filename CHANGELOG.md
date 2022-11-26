@@ -1,3 +1,11 @@
+## [1.2.26](https://github.com/CoCreate-app/CoCreate-fullcalendar/compare/v1.2.25...v1.2.26) (2022-11-26)
+
+
+### Bug Fixes
+
+* bump dependencies ([85c5c56](https://github.com/CoCreate-app/CoCreate-fullcalendar/commit/85c5c56ccc29a0cae7965fea30d83f4ba1ae6031))
+* toggle-order renamed to filter-sort-toggle ([19b947d](https://github.com/CoCreate-app/CoCreate-fullcalendar/commit/19b947d9d2b1528abc28416fae031285ee498faa))
+
 ## [1.2.25](https://github.com/CoCreate-app/CoCreate-fullcalendar/compare/v1.2.24...v1.2.25) (2022-11-25)
 
 
