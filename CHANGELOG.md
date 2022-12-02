@@ -1,3 +1,10 @@
+## [1.2.31](https://github.com/CoCreate-app/CoCreate-fullcalendar/compare/v1.2.30...v1.2.31) (2022-12-02)
+
+
+### Bug Fixes
+
+* docs ([3cd363c](https://github.com/CoCreate-app/CoCreate-fullcalendar/commit/3cd363c66ace012b2e5f45f7820dfaad68c53c92))
+
 ## [1.2.30](https://github.com/CoCreate-app/CoCreate-fullcalendar/compare/v1.2.29...v1.2.30) (2022-12-02)
 
 
