@@ -1,3 +1,10 @@
+## [1.2.35](https://github.com/CoCreate-app/CoCreate-fullcalendar/compare/v1.2.34...v1.2.35) (2022-12-09)
+
+
+### Bug Fixes
+
+* bump dependencies ([7395de2](https://github.com/CoCreate-app/CoCreate-fullcalendar/commit/7395de2411e4b8699b6e7e21af3e633a717d8b4e))
+
 ## [1.2.34](https://github.com/CoCreate-app/CoCreate-fullcalendar/compare/v1.2.33...v1.2.34) (2022-12-08)
 
 
