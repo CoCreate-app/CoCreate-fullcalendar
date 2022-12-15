@@ -1,3 +1,10 @@
+## [1.2.40](https://github.com/CoCreate-app/CoCreate-fullcalendar/compare/v1.2.39...v1.2.40) (2022-12-15)
+
+
+### Bug Fixes
+
+* add missing dev dependency style-loader ([653631d](https://github.com/CoCreate-app/CoCreate-fullcalendar/commit/653631dcb8af0a1b57bb825ca82c8d3b6f652ad9))
+
 ## [1.2.39](https://github.com/CoCreate-app/CoCreate-fullcalendar/compare/v1.2.38...v1.2.39) (2022-12-13)
 
 
