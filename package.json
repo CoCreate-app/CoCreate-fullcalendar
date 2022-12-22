@@ -1,6 +1,6 @@
 {
   "name": "@cocreate/fullcalendar",
-  "version": "1.2.42",
+  "version": "1.2.43",
   "description": "A simple fullcalendar component in vanilla javascript. Easily configured using HTML5 attributes and/or JavaScript API.",
   "keywords": [
     "fullcalendar",
@@ -20,7 +20,9 @@
     "html5-framework",
     "javascript-framework"
   ],
-  "publishConfig": { "access": "public" },
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "start": "npx webpack --config webpack.config.js",
     "build": "NODE_ENV=production npx webpack --config webpack.config.js",
