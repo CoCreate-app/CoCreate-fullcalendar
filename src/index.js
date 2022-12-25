@@ -301,7 +301,6 @@ function eventClicked(info) {
     }
   })
 
-  // link.initDataPassValues();
   link.runLink(eventLink);
   
 }
@@ -386,7 +385,7 @@ function selectedDates(info) {
       }
     })
 
-    let passValues = [
+    let passAttributes = [
       {
     			pass_value_to: 'start_date',
 					value: startDate
@@ -405,16 +404,9 @@ function selectedDates(info) {
       }
     ]
     
-    window.localStorage.setItem('passedValues', JSON.stringify(passValues));
+    window.localStorage.setItem('passedValues', JSON.stringify(passAttributes));
 
-    
-    // link.setDataPassValues({
-    //   start_date: startDate,
-    //   end_date: endDate,
-    //   start_time: startTime,
-    //   end_time: endTime
-    // });
-  
+      
     link.runLink(eventLink);
   }
 }
