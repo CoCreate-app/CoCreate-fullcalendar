@@ -1,3 +1,11 @@
+## [1.2.46](https://github.com/CoCreate-app/CoCreate-fullcalendar/compare/v1.2.45...v1.2.46) (2022-12-25)
+
+
+### Bug Fixes
+
+* bump dependencies ([17bfe20](https://github.com/CoCreate-app/CoCreate-fullcalendar/commit/17bfe20636b1e9b33c8501ad9fca2011a1807583))
+* passValues replaced with passAttributes ([4d50df3](https://github.com/CoCreate-app/CoCreate-fullcalendar/commit/4d50df398a1b0887aee774d781362d9499d60d5a))
+
 ## [1.2.45](https://github.com/CoCreate-app/CoCreate-fullcalendar/compare/v1.2.44...v1.2.45) (2022-12-23)
 
 
