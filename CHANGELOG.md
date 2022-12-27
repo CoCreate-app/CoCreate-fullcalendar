@@ -1,3 +1,12 @@
+## [1.2.47](https://github.com/CoCreate-app/CoCreate-fullcalendar/compare/v1.2.46...v1.2.47) (2022-12-27)
+
+
+### Bug Fixes
+
+* bump dependecies ([9f892c7](https://github.com/CoCreate-app/CoCreate-fullcalendar/commit/9f892c76d9699eef4daeba532a108811263328aa))
+* bump dependencies ([e3e3c85](https://github.com/CoCreate-app/CoCreate-fullcalendar/commit/e3e3c856ebe5774d3228d4534690ad92ecc14484))
+* modal href updated to modal-src ([377b18e](https://github.com/CoCreate-app/CoCreate-fullcalendar/commit/377b18e97fbf10e68d9e4a53d26b2a3366976ec1))
+
 ## [1.2.46](https://github.com/CoCreate-app/CoCreate-fullcalendar/compare/v1.2.45...v1.2.46) (2022-12-25)
 
 
