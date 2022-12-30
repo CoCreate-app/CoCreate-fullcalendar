@@ -1,3 +1,10 @@
+## [1.2.49](https://github.com/CoCreate-app/CoCreate-fullcalendar/compare/v1.2.48...v1.2.49) (2022-12-30)
+
+
+### Bug Fixes
+
+* update config sources to use template  braces with entry on src ([1f1860e](https://github.com/CoCreate-app/CoCreate-fullcalendar/commit/1f1860ee0c080107451914066b7fa9dbefc3c206))
+
 ## [1.2.48](https://github.com/CoCreate-app/CoCreate-fullcalendar/compare/v1.2.47...v1.2.48) (2022-12-29)
 
 
