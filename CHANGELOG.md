@@ -1,3 +1,10 @@
+## [1.2.51](https://github.com/CoCreate-app/CoCreate-fullcalendar/compare/v1.2.50...v1.2.51) (2023-01-01)
+
+
+### Bug Fixes
+
+* docs sanbox overflow ([74ce828](https://github.com/CoCreate-app/CoCreate-fullcalendar/commit/74ce8286dbd95361dd4ec0ae828e4a7af24d4d2f))
+
 ## [1.2.50](https://github.com/CoCreate-app/CoCreate-fullcalendar/compare/v1.2.49...v1.2.50) (2022-12-31)
 
 
