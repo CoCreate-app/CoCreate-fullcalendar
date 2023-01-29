@@ -1,3 +1,10 @@
+# [1.3.0](https://github.com/CoCreate-app/CoCreate-fullcalendar/compare/v1.2.57...v1.3.0) (2023-01-29)
+
+
+### Features
+
+* import @cocreate/local-storage ([54ea676](https://github.com/CoCreate-app/CoCreate-fullcalendar/commit/54ea6763428ac41bc33ebcf06c11f4b9e7535e61))
+
 ## [1.2.57](https://github.com/CoCreate-app/CoCreate-fullcalendar/compare/v1.2.56...v1.2.57) (2023-01-27)
 
 
