@@ -2,6 +2,7 @@ import crud from '@cocreate/crud-client';
 import ccfilter from '@cocreate/filter'
 import observer from '@cocreate/observer'
 import link from '@cocreate/link';
+import localStorage from '@cocreate/local-storage';
 
 var calOBJs = new Map();
 var calendarElClass = 'cal-container';
@@ -404,7 +405,7 @@ function selectedDates(info) {
       }
     ]
     
-    window.localStorage.setItem('passedValues', JSON.stringify(passAttributes));
+    localStorage.setItem('passedValues', JSON.stringify(passAttributes));
 
       
     link.runLink(eventLink);
