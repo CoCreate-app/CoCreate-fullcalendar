@@ -1,3 +1,10 @@
+# [1.4.0](https://github.com/CoCreate-app/CoCreate-fullcalendar/compare/v1.3.5...v1.4.0) (2023-03-16)
+
+
+### Features
+
+* replaced get-value and set-value with a super charged version of CoCreate-events ([b566f91](https://github.com/CoCreate-app/CoCreate-fullcalendar/commit/b566f9175b3e3689bb41629f43f329115d895e45))
+
 ## [1.3.5](https://github.com/CoCreate-app/CoCreate-fullcalendar/compare/v1.3.4...v1.3.5) (2023-02-01)
 
 
