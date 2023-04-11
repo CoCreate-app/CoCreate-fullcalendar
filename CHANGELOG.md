@@ -1,3 +1,10 @@
+## [1.4.4](https://github.com/CoCreate-app/CoCreate-fullcalendar/compare/v1.4.3...v1.4.4) (2023-04-11)
+
+
+### Bug Fixes
+
+* renamed domains to hosts ([612bd4d](https://github.com/CoCreate-app/CoCreate-fullcalendar/commit/612bd4dfee73f20db1a758a6f2938e0aff50e6a6))
+
 ## [1.4.3](https://github.com/CoCreate-app/CoCreate-fullcalendar/compare/v1.4.2...v1.4.3) (2023-03-30)
 
 
