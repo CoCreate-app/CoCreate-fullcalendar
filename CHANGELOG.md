@@ -1,3 +1,10 @@
+# [1.5.0](https://github.com/CoCreate-app/CoCreate-fullcalendar/compare/v1.4.6...v1.5.0) (2023-04-24)
+
+
+### Features
+
+* added pwa manifest ([4aa1da4](https://github.com/CoCreate-app/CoCreate-fullcalendar/commit/4aa1da4c7021ed3263b81a15d80ebb58c04d8f6c))
+
 ## [1.4.6](https://github.com/CoCreate-app/CoCreate-fullcalendar/compare/v1.4.5...v1.4.6) (2023-04-11)
 
 
