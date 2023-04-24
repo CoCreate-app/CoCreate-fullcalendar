@@ -1,3 +1,10 @@
+## [1.5.3](https://github.com/CoCreate-app/CoCreate-fullcalendar/compare/v1.5.2...v1.5.3) (2023-04-24)
+
+
+### Bug Fixes
+
+* updated worrkflows to v3 and node version 16 ([ae46e7d](https://github.com/CoCreate-app/CoCreate-fullcalendar/commit/ae46e7d58856dfccedd03d473ada999037a1b573))
+
 ## [1.5.2](https://github.com/CoCreate-app/CoCreate-fullcalendar/compare/v1.5.1...v1.5.2) (2023-04-24)
 
 
