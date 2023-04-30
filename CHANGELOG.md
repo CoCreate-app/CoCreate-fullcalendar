@@ -1,3 +1,12 @@
+## [1.5.4](https://github.com/CoCreate-app/CoCreate-fullcalendar/compare/v1.5.3...v1.5.4) (2023-04-30)
+
+
+### Bug Fixes
+
+* fullscreen target updated to fullscreen fullscreen-target ([8ba4fc9](https://github.com/CoCreate-app/CoCreate-fullcalendar/commit/8ba4fc95bb5254b317dc1df7d1b18adc8a3c947d))
+* package-lock.json and pnpm-lock.yaml added to .gitignore ([dc1240a](https://github.com/CoCreate-app/CoCreate-fullcalendar/commit/dc1240aacb45fcf363ac6359c17ea426cd3daf8c))
+* removed toogle fullscreen icons. now using css content ([df1c684](https://github.com/CoCreate-app/CoCreate-fullcalendar/commit/df1c684bd7917cb04b89974e493768a3675b5f0c))
+
 ## [1.5.3](https://github.com/CoCreate-app/CoCreate-fullcalendar/compare/v1.5.2...v1.5.3) (2023-04-24)
 
 
