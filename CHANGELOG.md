@@ -1,3 +1,10 @@
+## [1.5.5](https://github.com/CoCreate-app/CoCreate-fullcalendar/compare/v1.5.4...v1.5.5) (2023-05-01)
+
+
+### Bug Fixes
+
+* replace fontawesome with svg ([4be777d](https://github.com/CoCreate-app/CoCreate-fullcalendar/commit/4be777de0e79d7b8dff7cdfa45329bd77e96f16b))
+
 ## [1.5.4](https://github.com/CoCreate-app/CoCreate-fullcalendar/compare/v1.5.3...v1.5.4) (2023-04-30)
 
 
