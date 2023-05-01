@@ -1,3 +1,10 @@
+## [1.5.6](https://github.com/CoCreate-app/CoCreate-fullcalendar/compare/v1.5.5...v1.5.6) (2023-05-01)
+
+
+### Bug Fixes
+
+* update manifest.json to manifest.webmanifest ([bd1b041](https://github.com/CoCreate-app/CoCreate-fullcalendar/commit/bd1b041dd2f27ebfc0e7128f372810ad97f9f27f))
+
 ## [1.5.5](https://github.com/CoCreate-app/CoCreate-fullcalendar/compare/v1.5.4...v1.5.5) (2023-05-01)
 
 
