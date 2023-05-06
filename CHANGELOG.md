@@ -1,3 +1,10 @@
+## [1.5.7](https://github.com/CoCreate-app/CoCreate-fullcalendar/compare/v1.5.6...v1.5.7) (2023-05-01)
+
+
+### Bug Fixes
+
+* replaced icon toggles with new svg ([61ed2a1](https://github.com/CoCreate-app/CoCreate-fullcalendar/commit/61ed2a1163104b1d8b1854cd374fb12ba255c975))
+
 ## [1.5.6](https://github.com/CoCreate-app/CoCreate-fullcalendar/compare/v1.5.5...v1.5.6) (2023-05-01)
 
 
