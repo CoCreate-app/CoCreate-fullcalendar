@@ -1,3 +1,11 @@
+## [1.5.8](https://github.com/CoCreate-app/CoCreate-fullcalendar/compare/v1.5.7...v1.5.8) (2023-05-10)
+
+
+### Bug Fixes
+
+* bump [@cocreate](https://github.com/cocreate) dependencies ([d9b329c](https://github.com/CoCreate-app/CoCreate-fullcalendar/commit/d9b329cea1c5bc05a26181c50416360ae4f23d43))
+* filter-sort icon ([a125085](https://github.com/CoCreate-app/CoCreate-fullcalendar/commit/a125085c24eecc4567eaec6029be2935909891cd))
+
 ## [1.5.7](https://github.com/CoCreate-app/CoCreate-fullcalendar/compare/v1.5.6...v1.5.7) (2023-05-01)
 
 
