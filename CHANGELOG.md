@@ -1,3 +1,10 @@
+## [1.5.9](https://github.com/CoCreate-app/CoCreate-fullcalendar/compare/v1.5.8...v1.5.9) (2023-05-10)
+
+
+### Bug Fixes
+
+* apikey renamed to key ([cb5647c](https://github.com/CoCreate-app/CoCreate-fullcalendar/commit/cb5647c1d41d301f9be9692fcde617b306307492))
+
 ## [1.5.8](https://github.com/CoCreate-app/CoCreate-fullcalendar/compare/v1.5.7...v1.5.8) (2023-05-10)
 
 
