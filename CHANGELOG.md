@@ -1,3 +1,10 @@
+## [1.5.10](https://github.com/CoCreate-app/CoCreate-fullcalendar/compare/v1.5.9...v1.5.10) (2023-05-19)
+
+
+### Bug Fixes
+
+* update packages to latest version. This commit updates various packages in the dependencies section of the package.json file to their latest published versions, thereby fixing multiple bugs and improving overall performance. ([eb2f2cb](https://github.com/CoCreate-app/CoCreate-fullcalendar/commit/eb2f2cb3b3e4bd216bea6bb59682b814db72a3f2))
+
 ## [1.5.9](https://github.com/CoCreate-app/CoCreate-fullcalendar/compare/v1.5.8...v1.5.9) (2023-05-10)
 
 
