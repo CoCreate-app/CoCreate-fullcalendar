@@ -64,6 +64,6 @@
     "@cocreate/filter": "^1.19.12",
     "@cocreate/link": "^1.4.10",
     "@cocreate/local-storage": "^1.7.3",
-    "@cocreate/observer": "^1.7.10"
+    "@cocreate/observer": "^1.8.0"
   }
 }
