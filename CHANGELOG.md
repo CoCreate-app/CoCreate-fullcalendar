@@ -1,3 +1,11 @@
+## [1.5.14](https://github.com/CoCreate-app/CoCreate-fullcalendar/compare/v1.5.13...v1.5.14) (2023-06-04)
+
+
+### Bug Fixes
+
+* replaced secert GITHUB_TOKEN with GITHUB ([f5795ac](https://github.com/CoCreate-app/CoCreate-fullcalendar/commit/f5795ac126184a62f6888d9f4c1af8fa31790dff))
+* Update dependencies versions for [@cocreate](https://github.com/cocreate) libraries ([4334660](https://github.com/CoCreate-app/CoCreate-fullcalendar/commit/43346605e84696669cf1f8469c155632cf59e705))
+
 ## [1.5.13](https://github.com/CoCreate-app/CoCreate-fullcalendar/compare/v1.5.12...v1.5.13) (2023-06-04)
 
 
