@@ -58,12 +58,12 @@
     "webpack-log": "^3.0.1"
   },
   "dependencies": {
-    "@cocreate/actions": "^1.8.12",
-    "@cocreate/crud-client": "^1.21.5",
-    "@cocreate/docs": "^1.7.13",
-    "@cocreate/filter": "^1.19.12",
-    "@cocreate/link": "^1.4.10",
-    "@cocreate/local-storage": "^1.7.3",
-    "@cocreate/observer": "^1.8.0"
+    "@cocreate/actions": "^1.8.14",
+    "@cocreate/crud-client": "^1.21.8",
+    "@cocreate/docs": "^1.7.15",
+    "@cocreate/filter": "^1.19.14",
+    "@cocreate/link": "^1.4.12",
+    "@cocreate/local-storage": "^1.7.5",
+    "@cocreate/observer": "^1.8.3"
   }
 }
