@@ -1,3 +1,11 @@
+## [1.5.24](https://github.com/CoCreate-app/CoCreate-fullcalendar/compare/v1.5.23...v1.5.24) (2023-06-11)
+
+
+### Bug Fixes
+
+* testing workflow ([7e595af](https://github.com/CoCreate-app/CoCreate-fullcalendar/commit/7e595af5fa67486d9000aa20daa17730adf778c4))
+* testing workflow ([8823491](https://github.com/CoCreate-app/CoCreate-fullcalendar/commit/88234913673939d25bc06a590d9a2a5f819603cf))
+
 ## [1.5.23](https://github.com/CoCreate-app/CoCreate-fullcalendar/compare/v1.5.22...v1.5.23) (2023-06-11)
 
 
