@@ -1,3 +1,10 @@
+## [1.5.21](https://github.com/CoCreate-app/CoCreate-fullcalendar/compare/v1.5.20...v1.5.21) (2023-06-11)
+
+
+### Bug Fixes
+
+* postintall error ([49a7a7b](https://github.com/CoCreate-app/CoCreate-fullcalendar/commit/49a7a7b062f1af7cd1718dcd53e163af0758d5e3))
+
 ## [1.5.20](https://github.com/CoCreate-app/CoCreate-fullcalendar/compare/v1.5.19...v1.5.20) (2023-06-11)
 
 
