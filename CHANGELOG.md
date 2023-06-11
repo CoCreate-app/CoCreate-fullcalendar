@@ -1,3 +1,10 @@
+## [1.5.18](https://github.com/CoCreate-app/CoCreate-fullcalendar/compare/v1.5.17...v1.5.18) (2023-06-11)
+
+
+### Bug Fixes
+
+* renamed hosts to host. the value can be a string or an array of strings ([b84bfa1](https://github.com/CoCreate-app/CoCreate-fullcalendar/commit/b84bfa1b9f9ca29110bbd4282d079cb04799a3b0))
+
 ## [1.5.17](https://github.com/CoCreate-app/CoCreate-fullcalendar/compare/v1.5.16...v1.5.17) (2023-06-10)
 
 
