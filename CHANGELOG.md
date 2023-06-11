@@ -1,3 +1,10 @@
+## [1.5.20](https://github.com/CoCreate-app/CoCreate-fullcalendar/compare/v1.5.19...v1.5.20) (2023-06-11)
+
+
+### Bug Fixes
+
+* @cocreate/cli moved to dependencies ([e5cd4c0](https://github.com/CoCreate-app/CoCreate-fullcalendar/commit/e5cd4c023bd71d537819796b09873958d38665e8))
+
 ## [1.5.19](https://github.com/CoCreate-app/CoCreate-fullcalendar/compare/v1.5.18...v1.5.19) (2023-06-11)
 
 
