@@ -51,7 +51,7 @@
             id="menuL"
             class="position:fixed top:0px left:0px overflow:hidden background:whitesmoke height:100vh width:0px width:300px@xl"
             resizable
-            resize-target="[content_id='content']"
+            resize-selector="[content_id='content']"
             resize-property="margin-left"
             resize-value="width">
             <menu
@@ -80,7 +80,7 @@
                         share-width="700"
                         share-media="https://cdn.cocreate.app/docs/fullcalendar.png"
                         hover="display:block!important"
-                        hover-target=".social-networks">
+                        hover-selector=".social-networks">
                         <div class="display:none social-networks">
                             <a
                                 class="margin-right:15px"
@@ -169,11 +169,11 @@
                         class="border-bottom:1px_solid_lightgrey"
                         scroll
                         scroll-intersect="color:dodgerblue"
-                        scroll-target="#fullcalendar-install-section">
+                        scroll-selector="#fullcalendar-install-section">
                         <span
                             class="display:flex align-items:center width:fit-content"
                             hover="display:block!important"
-                            hover-target="[href='#fullcalendar-install']">
+                            hover-selector="[href='#fullcalendar-install']">
                             <h2 class="padding:5px_0px">Install</h2>
                             <a
                                 class="margin-left:10px display:none"
@@ -195,11 +195,11 @@
                         class="margin-top:80px border-bottom:1px_solid_lightgrey"
                         scroll
                         scroll-intersect="color:dodgerblue"
-                        scroll-target="#fullcalendar-usage-section">
+                        scroll-selector="#fullcalendar-usage-section">
                         <span
                             class="display:flex align-items:center width:fit-content"
                             hover="display:block!important"
-                            hover-target="[href='#fullcalendar-usage']">
+                            hover-selector="[href='#fullcalendar-usage']">
                             <h2 class="padding:5px_0px">Usage</h2>
                             <a
                                 class="margin-left:10px display:none"
@@ -252,11 +252,11 @@
                         class="margin-top:80px border-bottom:1px_solid_lightgrey"
                         scroll
                         scroll-intersect="color:dodgerblue"
-                        scroll-target="#fullcalendar-attributes-section">
+                        scroll-selector="#fullcalendar-attributes-section">
                         <span
                             class="display:flex align-items:center width:fit-content"
                             hover="display:block!important"
-                            hover-target="[href='#fullcalendar-attributes']">
+                            hover-selector="[href='#fullcalendar-attributes']">
                             <h2 class="padding:5px_0px">Attributes</h2>
                             <a
                                 class="margin-left:10px display:none"
@@ -340,11 +340,11 @@
                         class="border-bottom:1px_solid_lightgrey"
                         scroll
                         scroll-intersect="color:dodgerblue"
-                        scroll-target="#fullcalendar-demo-section">
+                        scroll-selector="#fullcalendar-demo-section">
                         <span
                             class="display:flex align-items:center width:fit-content"
                             hover="display:block!important"
-                            hover-target="[href='#fullcalendar-demo']">
+                            hover-selector="[href='#fullcalendar-demo']">
                             <h2 class="padding:5px_0px">Demo</h2>
                             <a
                                 class="margin-left:10px display:none"
@@ -373,7 +373,7 @@
                                     name="demo"
                                     save="false"
                                     id="demo"
-                                    input-target=".demopreview"
+                                    input-selector=".demopreview"
                                     input-attribute="value"
                                     input-events="input, onload"
                                     class="height:100% width:100% outline:none border:none resize:none padding:5px"></textarea>
@@ -396,7 +396,7 @@
                                     show="#eye-slash"
                                     hide="#eye, #demo-preview"
                                     toggle="code-height"
-                                    toggle-target="#demo-code"
+                                    toggle-selector="#demo-code"
                                     ><i
                                         class="height:18px fill:#505050"
                                         src="/assets/svg/eye.svg"></i
@@ -408,7 +408,7 @@
                                     show="#eye, #demo-preview"
                                     hide="#eye-slash"
                                     toggle="code-height"
-                                    toggle-target="#demo-code"
+                                    toggle-selector="#demo-code"
                                     ><i
                                         class="height:20px fill:#505050"
                                         src="/assets/svg/eye-slash.svg"></i
@@ -435,7 +435,7 @@
                                 <a
                                     class="margin-right:5px"
                                     fullscreen
-                                    fullscreen-target="#playground"></a>
+                                    fullscreen-selector="#playground"></a>
                             </div>
                         </div>
                         <!-- End SandBox -->
