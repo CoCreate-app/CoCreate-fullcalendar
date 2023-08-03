@@ -4,8 +4,8 @@ module.exports = {
     "host": "",
     "sources": [
         {
-            "collection": "files",
-            "document": {
+            "array": "files",
+            "object": {
                 "_id": "6028368f71064611a678a1a3",
                 "name": "index.html",
                 "path": "/docs/fullcalendar/index.html",

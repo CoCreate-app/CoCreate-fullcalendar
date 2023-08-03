@@ -12,21 +12,22 @@ const textColors = ['#8c489f', '#f610e5', '#1013f6', '#1079f6', '#109ff6', '#49f
 
 function initSocketsForCalendars() {
 
-    crud.listen('createDocument', function (data) {
+    crud.listen('create.object', function (data) {
         updateCalendar(data);
     });
 
-    crud.listen('updateDocument', function (data) {
-        updateCalendar(data);
-    });
-
-    crud.listen('deleteDocument', function (data) {
-        deleteDocumentForCalendar(data);
-    });
-
-    crud.listen('readDocument', function (data) {
+    crud.listen('read.object', function (data) {
         fetchedCalendarData(data);
     });
+
+    crud.listen('update.object', function (data) {
+        updateCalendar(data);
+    });
+
+    crud.listen('delete.object', function (data) {
+        deleteObjectForCalendar(data);
+    });
+
 }
 
 
@@ -139,7 +140,7 @@ function initCalendars(container) {
 function renderDataToCalendar(calObj, data) {
     var eventSource = new Array();
 
-    data.document.forEach(function (item, index) {
+    data.object.forEach(function (item, index) {
         var newEvent = {};
         const { bg_color, text_color } = getRandomColor()
         newEvent.id = item['_id'];
@@ -177,15 +178,15 @@ function getTitle(doc, displayName) {
 }
 
 function updateCalendar(data) {
-    var collection = data['collection'];
+    var array = data['array'];
 
     for (let calObj of calOBJs.values()) {
 
-        if (calObj.filter.collection == collection) {
+        if (calObj.filter.array == array) {
             var calendar = calObj.calendar;
             var eventSource = [];
 
-            var event = calendar.getEventById(data['document_id']);
+            var event = calendar.getEventById(data['object']);
             if (event) {
 
                 var start = event.start;
@@ -198,7 +199,7 @@ function updateCalendar(data) {
 
                 var backgroundColor = event.backgroundColor;
                 var textColor = event.textColor;
-                const main_data = data.document;
+                const main_data = data.object;
                 for (var key in main_data) {
 
                     if (key == calObj.displayName) {
@@ -233,7 +234,7 @@ function updateCalendar(data) {
                 event.setEnd(end_date + 'T' + end_time);
 
             } else {
-                let newEvent = createEventItem(data.document, calObj.displayName);
+                let newEvent = createEventItem(data.object, calObj.displayName);
                 if (newEvent) {
                     eventSource.push(newEvent)
                     calendar.addEventSource(eventSource);
@@ -266,12 +267,12 @@ function createEventItem(data, displayName) {
 
 
 
-function deleteDocumentForCalendar(data) {
-    const document_id = data['document_id']
+function deleteObjectForCalendar(data) {
+    const object = data['object']
     for (let calObj of calOBJs.values()) {
 
-        if (calObj.filter.collection == data['collection']) {
-            removeEvent(calObj.calendar, document_id);
+        if (calObj.filter.array == data['array']) {
+            removeEvent(calObj.calendar, object);
         }
     }
 }
@@ -290,15 +291,15 @@ function eventClicked(info) {
     var cal_el = calendar.el;
 
     var eventLink = cal_el.querySelector('.eventLink');
-    if (eventLink.hasAttribute('pass-document_id')) {
-        eventLink.setAttribute('pass-document_id', eventId);
+    if (eventLink.hasAttribute('pass-object')) {
+        eventLink.setAttribute('pass-object', eventId);
     }
 
-    let els = eventLink.querySelectorAll("[pass-document_id]")
+    let els = eventLink.querySelectorAll("[pass-object]")
 
     els.forEach((el) => {
-        if (!el.getAttribute('pass-document_id')) {
-            el.setAttribute('pass-document_id', eventId);
+        if (!el.getAttribute('pass-object')) {
+            el.setAttribute('pass-object', eventId);
         }
     })
 
@@ -319,10 +320,11 @@ function changedEvent(info) {
     var calObj = calOBJs.get(cal_id);
     if (calObj) {
 
-        crud.updateDocument({
-            'collection': calObj.filter.collection,
-            'element': cal_id,
-            'data': {
+        crud.send({
+            method: 'update.object',
+            array: calObj.filter.array,
+            element: cal_id,
+            object: {
                 _id: event.id,
                 start_date: startDate,
                 end_date: endDate,
@@ -375,14 +377,14 @@ function selectedDates(info) {
     if (calObj) {
 
         const eventLink = info.view.calendar.el.querySelector('.eventLink');
-        if (eventLink.hasAttribute('pass-document_id')) {
-            eventLink.setAttribute('pass-document_id', "");
+        if (eventLink.hasAttribute('pass-object')) {
+            eventLink.setAttribute('pass-object', "");
         }
-        let els = eventLink.querySelectorAll("[pass-document_id]")
+        let els = eventLink.querySelectorAll("[pass-object]")
 
         els.forEach((el) => {
-            if (!el.getAttribute('pass-document_id')) {
-                el.setAttribute('pass-document_id', "");
+            if (!el.getAttribute('pass-object')) {
+                el.setAttribute('pass-object', "");
             }
         })
 
