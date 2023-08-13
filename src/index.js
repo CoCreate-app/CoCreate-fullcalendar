@@ -1,79 +1,36 @@
-import crud from '@cocreate/crud-client';
-import ccfilter from '@cocreate/filter'
-import observer from '@cocreate/observer'
+import Observer from '@cocreate/observer'
 import link from '@cocreate/link';
 import localStorage from '@cocreate/local-storage';
+import { getValueFromObject, queryElements } from '@cocreate/utils';
 
-var calOBJs = new Map();
-var calendarElClass = 'cal-container';
+const calendars = new Map();
+const selector = '[plugin="fullcalendar"]';
 const bgColors = ['#09efc6', '#09ef1a', '#efec09', '#ef8609', '#ef6009', '#b609ef', '#ef0986', '#09efec', '#ecef09', '#09a6ef', '#076692', '#c0b507', '#c04807', '#6b07c0', '#72aeb5', '#69811e', '#8d2b23'];
 const textColors = ['#8c489f', '#f610e5', '#1013f6', '#1079f6', '#109ff6', '#49f610', '#10f679', '#f61013', '#1310f6', '#f65910', '#f8996c', '#3f4af8', '#3fb7f8', '#94f83f', '#8d514a', '#fff', '#72d4dc'];
 
 
-function initSocketsForCalendars() {
+function init(element) {
+    if (element && !Array.isArray(element))
+        element = [element]
+    else if (!element)
+        element = document.querySelectorAll(selector);
 
-    crud.listen('create.object', function (data) {
-        updateCalendar(data);
-    });
-
-    crud.listen('read.object', function (data) {
-        fetchedCalendarData(data);
-    });
-
-    crud.listen('update.object', function (data) {
-        updateCalendar(data);
-    });
-
-    crud.listen('delete.object', function (data) {
-        deleteObjectForCalendar(data);
-    });
-
-}
-
-
-function fetchedCalendarData(data) {
-
-    let calObject = calOBJs.get(data['element']);
-    if (calObject) {
-        renderDataToCalendar(calObject, data)
-    }
-}
-
-
-///////////////////////////////////////////////////////////////////////
-function initCalendars(container) {
-
-    let process_container = container || document;
-    if (!process_container.querySelectorAll) {
-        return;
-    }
-    let calContainers = process_container.querySelectorAll('.' + calendarElClass);
-
-    if (calContainers.length == 0 && process_container != document && process_container.hasAttribute(calendarElClass)) {
-        calContainers = [process_container];
-    }
-
-
-    for (var i = 0; i < calContainers.length; i++) {
-        var calContainer = calContainers[i];
-
-        var id = calContainer.id;
-        if (!id) continue;
-
-        var cal_id = calContainer.getAttribute('calendar_id');
-
-        var displayName = calContainer.getAttribute('event-name');
-
-        let filter = ccfilter.init(calContainer, "calendar_id", "calendar");
-        if (!filter) continue;
-
-        if (observer.getInitialized(calContainer)) {
-            continue;
+    for (let i = 0; i < element.length; i++) {
+        element[i].setValue = (data) => setData(element[i], data)
+        if (element[i].getValue) {
+            let value = element[i].getValue()
+            if (value)
+                element[i].setValue(value)
         }
-        observer.setInitialized(calContainer)
+        // element[i].getValue = () => getData(data)
+
+    }
 
 
-        var calendar = new FullCalendar.Calendar(calContainer, {
+    for (let i = 0; i < element.length; i++) {
+        let displayName = element[i].getAttribute('event-name');
+
+        let calendar = new FullCalendar.Calendar(element[i], {
             plugins: ['interaction', 'dayGrid', 'timeGrid', 'resourceTimeline', 'timeline', 'list'],
             height: '100%',
             editable: true,
@@ -96,201 +53,131 @@ function initCalendars(container) {
             //   return $(event.el);
             // },
 
-            eventClick: function (info) {
-                eventClicked(info);
+            eventClick: function (data) {
+                eventClicked(data);
             },
 
-            eventResize: function (info) {
-                changedEvent(info);
+            eventResize: function (data) {
+                data.event.el.save()
             },
 
-            eventDrop: function (info) {
-                changedEvent(info);
+            eventDrop: function (data) {
+                data.event.el.save()
             },
 
-            select: function (info) {
-                selectedDates(info);
+            select: function (data) {
+                selectedDates(data);
             }
         });
 
+        calendar.displayName = displayName
         calendar.render();
 
-        var calObj = {
-            eId: id,
-            calendar_id: cal_id,
-            calendar: calendar,
-            displayName: displayName,
-            filter: filter
-        }
-
-        calContainer.addEventListener("fetchData", function (e) {
-            // removeOldData(eObj.el)
-            //. calenar init
-            calObj.filter.index = 0;
-            ccfilter.fetchData(calObj.filter);
-        })
-
-        ccfilter.fetchData(filter);
-
-        calOBJs.set(calObj);
+        calendars.set(element[i], calendar);
     }
-
 }
 
-function renderDataToCalendar(calObj, data) {
-    var eventSource = new Array();
+function setData(element, data) {
+    const calendar = calendars.get(element);
+    if (!calendar)
+        return
+
+    const eventSource = [];
 
     data.object.forEach(function (item, index) {
-        var newEvent = {};
-        const { bg_color, text_color } = getRandomColor()
-        newEvent.id = item['_id'];
-        newEvent.title = getTitle(item, calObj.displayName);
+        let event = calendar.getEventById(data['object']);
+        if (event) {
+            if (item.displayName)
+                event.setProp('title', item.displayName);
 
-        newEvent.textColor = text_color;
-        newEvent.backgroundColor = bg_color;
+            if (item.allDay)
+                event.setAllDay(item.allDay);
 
-        newEvent.start = item.start_date;
-        newEvent.end = convertEndDateForRender(item.end_date, item.end_time, item.allDay);
-        newEvent.allDay = item.allDay;
-        if (item.start_time) newEvent.start += 'T' + item.start_time;
-        if (item.end_time) newEvent.end += 'T' + item.end_time;
+            if (item.startDate || item.startTime) {
+                let startDate, startTime
+                if (!item.startDate)
+                    startDate = getDateString(event.start);
+                if (!item.startTime)
+                    startTime = getTimeString(event.start);
+                event.setStart(startDate + 'T' + startTime);
+            }
 
-        if (item.start_date && item.end_date) eventSource.push(newEvent);
+            if (item.endDate || item.endTime) {
+                let endDate, endTime
+                if (!item.startDate)
+                    startDate = getDateString(event.end);
+                if (!item.startTime)
+                    endTime = getTimeString(event.end);
+
+                endDate = convertEndDateForRender(endDate, endTime, event.allDay);
+                event.setEnd(endDate + 'T' + endTime);
+            }
+        } else {
+            event = {};
+            const { bgColor, textColor } = getRandomColor()
+
+            event.id = item['_id'];
+            event.title = getValueFromObject(data, calendar.displayName)
+
+            event.textColor = textColor;
+            event.backgroundColor = bgColor;
+
+            event.start = item.startDate;
+            event.end = convertEndDateForRender(item.endDate, item.endTime, item.allDay);
+            event.allDay = item.allDay;
+
+            if (item.startTime)
+                event.start += 'T' + item.startTime;
+            if (item.endTime)
+                event.end += 'T' + item.endTime;
+            if (item.startDate && item.endDate)
+                eventSource.push(event);
+        }
     })
 
-    calObj.calendar.addEventSource(eventSource);
+    calendar.addEventSource(eventSource);
+}
+
+function getData(event) {
+    return {
+        start: event.start,
+        end: event.end,
+        startDate: getDateString(event.start),
+        endDate: getDateString(event.end),
+        startTime: getTimeString(event.start),
+        endTime: getTimeString(event.end),
+        allDay: getTimeString(event.allDay)
+    }
+}
+
+function convertEndDateForRender(end, endTime, allDay) {
+    if (!allDay) {
+        return end;
+    }
+    return end;
+    let endDate = new Date(end);
+    endDate.setDate(endDate.getDate() + 1);
+    return endDate.toISOString().split('T')[0]
 }
 
 function getRandomColor() {
-    var number = Math.floor(Math.random() * bgColors.length);
-    return { bg_color: bgColors[number], text_color: textColors[number] };
+    const number = Math.floor(Math.random() * bgColors.length);
+    return { bgColor: bgColors[number], textColor: textColors[number] };
 }
 
-function getTitle(doc, displayName) {
-    var title = '';
-
-    if (doc[displayName] && displayName) {
-        title = doc[displayName];
-    }
-
-    return title;
-
+function removeEvent(calendar, object) {
+    // TODO: @cocreate/elements  needs to pass the calender element and trigger setValue, or renderValue
+    const event = calendar.getEventById(object._id);
+    event.remove();
 }
 
-function updateCalendar(data) {
-    var array = data['array'];
+function eventClicked(data) {
+    console.log(data);
+    const event = data.event;
+    const eventId = event.id;
+    const calendar = event._calendar;
 
-    for (let calObj of calOBJs.values()) {
-
-        if (calObj.filter.array == array) {
-            var calendar = calObj.calendar;
-            var eventSource = [];
-
-            var event = calendar.getEventById(data['object']);
-            if (event) {
-
-                var start = event.start;
-                var end = event.end;
-                var start_date = getDateString(start);
-                var start_time = getTimeString(start);
-                var end_date = getDateString(end);
-                var end_time = getTimeString(end);
-                var allDay = event.allDay;
-
-                var backgroundColor = event.backgroundColor;
-                var textColor = event.textColor;
-                const main_data = data.object;
-                for (var key in main_data) {
-
-                    if (key == calObj.displayName) {
-                        var newTitle = main_data[key];
-                        event.setProp('title', newTitle);
-                    }
-
-                    if (key == 'start_date') {
-                        start_date = main_data[key];
-                    }
-
-                    if (key == 'end_date') {
-                        end_date = main_data[key];
-                    }
-
-                    if (key == 'start_time') {
-                        start_time = main_data[key];
-                    }
-
-                    if (key == 'end_time') {
-                        end_time = main_data[key];
-                    }
-
-                    if (key === 'allDay') {
-                        allDay = main_data[key]
-                    }
-                }
-
-                end_date = convertEndDateForRender(end_date, end_time, allDay);
-                event.setAllDay(allDay);
-                event.setStart(start_date + 'T' + start_time);
-                event.setEnd(end_date + 'T' + end_time);
-
-            } else {
-                let newEvent = createEventItem(data.object, calObj.displayName);
-                if (newEvent) {
-                    eventSource.push(newEvent)
-                    calendar.addEventSource(eventSource);
-                }
-
-            }
-        }
-    }
-}
-
-function createEventItem(data, displayName) {
-    var newEvent = new Object();
-    const { bg_color, text_color } = getRandomColor()
-    newEvent.id = data['_id'];
-    newEvent.title = getTitle(data, displayName);
-    newEvent.textColor = 'black';
-    newEvent.backgroundColor = bg_color;
-    newEvent.textColor = text_color;
-    newEvent.start = data.start_date;
-    newEvent.end = convertEndDateForRender(data.end_date, data.end_time, data.allDay);
-    newEvent.allDay = data.allDay;
-    if (data.start_time) newEvent.start += 'T' + data.start_time;
-    if (data.end_time) newEvent.end += 'T' + data.end_time;
-
-    if (!data.start_date || !data.end_date) {
-        return null;
-    }
-    return newEvent;
-}
-
-
-
-function deleteObjectForCalendar(data) {
-    const object = data['object']
-    for (let calObj of calOBJs.values()) {
-
-        if (calObj.filter.array == data['array']) {
-            removeEvent(calObj.calendar, object);
-        }
-    }
-}
-
-function removeEvent(calendar, id) {
-    var eventSource = calendar.getEventById(id);
-    eventSource.remove();
-}
-
-function eventClicked(info) {
-    console.log(info);
-    var event = info.event;
-    var eventId = event.id;
-
-    var calendar = event._calendar;
-    var cal_el = calendar.el;
-
-    var eventLink = cal_el.querySelector('.eventLink');
+    let eventLink = calendar.el.querySelector('.eventLink');
     if (eventLink.hasAttribute('pass-object')) {
         eventLink.setAttribute('pass-object', eventId);
     }
@@ -304,35 +191,11 @@ function eventClicked(info) {
     })
 
     link.runLink(eventLink);
-
 }
 
-function changedEvent(info) {
-
-    var event = info.event;
-    var startDate = getDateString(event.start);
-    var endDate = getDateString(event.end);
-
-    var startTime = getTimeString(event.start);
-    var endTime = getTimeString(event.end);
-
-    var cal_id = event._calendar.el.id
-    var calObj = calOBJs.get(cal_id);
-    if (calObj) {
-
-        crud.send({
-            method: 'update.object',
-            array: calObj.filter.array,
-            element: cal_id,
-            object: {
-                _id: event.id,
-                start_date: startDate,
-                end_date: endDate,
-                start_time: startTime,
-                end_time: endTime
-            }
-        })
-    }
+// TODO: observe or someother means of adding functions to event element
+function eventAdded(element) {
+    element.getValue = () => getData(data)
 }
 
 function getDateString(date) {
@@ -365,191 +228,99 @@ function getTimeString(date) {
     return hour + ':' + min;
 }
 
-function selectedDates(info) {
-    var startDate = getDateString(info.start);
-    var endDate = getDateString(info.end);
+function selectedDates(data) {
+    var startDate = getDateString(data.start);
+    var endDate = getDateString(data.end);
 
-    var startTime = getTimeString(info.start);
-    var endTime = getTimeString(info.end);
+    var startTime = getTimeString(data.start);
+    var endTime = getTimeString(data.end);
 
-    var cal_id = info.view.calendar.el.id
-    var calObj = calOBJs.get(cal_id);
-    if (calObj) {
+    var element = data.view.calendar.el
+    var calendar = calendars.get(element);
+    if (calendar) return
 
-        const eventLink = info.view.calendar.el.querySelector('.eventLink');
-        if (eventLink.hasAttribute('pass-object')) {
-            eventLink.setAttribute('pass-object', "");
-        }
-        let els = eventLink.querySelectorAll("[pass-object]")
-
-        els.forEach((el) => {
-            if (!el.getAttribute('pass-object')) {
-                el.setAttribute('pass-object', "");
-            }
-        })
-
-        let passAttributes = [
-            {
-                pass_value_to: 'start_date',
-                value: startDate
-            },
-            {
-                pass_value_to: 'end_date',
-                value: endDate
-            },
-            {
-                pass_value_to: 'start_time',
-                value: startTime
-            },
-            {
-                pass_value_to: 'end_time',
-                value: endTime
-            }
-        ]
-
-        localStorage.setItem('passedValues', JSON.stringify(passAttributes));
-
-
-        link.runLink(eventLink);
+    const eventLink = data.view.calendar.el.querySelector('.eventLink');
+    if (eventLink.hasAttribute('pass-object')) {
+        eventLink.setAttribute('pass-object', "");
     }
+    let els = eventLink.querySelectorAll("[pass-object]")
+
+    els.forEach((el) => {
+        if (!el.getAttribute('pass-object')) {
+            el.setAttribute('pass-object', "");
+        }
+    })
+
+    let passAttributes = [
+        {
+            pass_value_to: 'startDate',
+            value: startDate
+        },
+        {
+            pass_value_to: 'endDate',
+            value: endDate
+        },
+        {
+            pass_value_to: 'startTime',
+            value: startTime
+        },
+        {
+            pass_value_to: 'endTime',
+            value: endTime
+        }
+    ]
+
+    localStorage.setItem('passedValues', JSON.stringify(passAttributes));
+
+
+    link.runLink(eventLink);
 }
 
-function initCalendarButtons(container) {
-    let main_container = container || document;
-    if (!main_container.querySelectorAll) {
-        return
-    }
-    var btns = main_container.querySelectorAll('[calendar_id][calendar-view]');
-    if (btns.length === 0 &&
-        main_container != document &&
-        main_container.hasAttribute('calendar-view') &&
-        main_container.hasAttribute('calendar_id')) {
-        btns = [main_container];
-    }
+function initButton(element) {
+    if (element && !Array.isArray(element))
+        element = [element]
+    else if (!element)
+        element = document.querySelectorAll('[calendar-view]');
 
-    for (var i = 0; i < btns.length; i++) {
-        var btn = btns[i];
-
-        // if (observer.getInitialized(btn)) {
-        //   continue;
-        // }
-        // observer.setInitialized(btn);
-
-        btn.addEventListener('click', function (e) {
+    for (let i = 0; i < element.length; i++) {
+        element.addEventListener('click', function (e) {
             e.preventDefault();
-            var type = this.getAttribute('calendar-view');
-            var calId = this.getAttribute('calendar_id');
-
-            calendarBtnClicked(calId, type);
+            const type = element.getAttribute('calendar-view');
+            const calendar = queryElements({ element, prefix: 'calendar' })
+            // TODO: use selector to query calendars
+            calendarBtnClicked(calendar, type);
         })
     }
 }
 
-function convertEndDateForRender(end, end_time, allDay) {
-    if (!allDay) {
-        return end;
-    }
-    return end;
-    let endDate = new Date(end);
-    endDate.setDate(endDate.getDate() + 1);
-    return endDate.toISOString().split('T')[0]
-}
-
-function calendarBtnClicked(calId, type) {
-    if (!calId) return;
-
-    for (let calObj of calOBJs.values()) {
-
-        if (calObj.eId == calId) {
-            var calendar = calObj.calendar;
-
-            console.log(type);
-
-            switch (type) {
-                case 'dayGridDay':
-                    // code
-                    calendar.changeView('dayGridDay')          ////   dayGridDay
-                    break;
-                case 'dayGridWeek':
-                    // code
-                    calendar.changeView('dayGridWeek')          ////  dayGridWeek
-                    break;
-                case 'dayGridMonth':
-                    // code
-                    calendar.changeView('dayGridMonth')     ///   dayGridMonth
-                    break;
-                case 'resourceTimelineDay':
-                    // code
-                    calendar.changeView('resourceTimelineDay')     ///   resourceTimelineDay
-                    break;
-                case 'resourceTimelineThreeDays':
-                    // code
-                    calendar.changeView('resourceTimelineThreeDays')     ///   resourceTimelineThreeDays
-                    break;
-                case 'resourceTimelineFiveDays':
-                    // code
-                    calendar.changeView('resourceTimelineFiveDays')     ///   resourceTimelineFiveDays
-                    break;
-                case 'timeGridWeek':
-                    // code
-                    calendar.changeView('timeGridWeek')     ///   timeGridWeek
-                    break;
-                case 'timeGridDay':
-                    // code
-                    calendar.changeView('timeGridDay')     ///   timeGridDay
-                    break;
-                case 'listDay':
-                    // code
-                    calendar.changeView('listDay')     ///   listDay
-                    break;
-                case 'listWeek':
-                    // code
-                    calendar.changeView('listWeek')     ///   listWeek
-                    break;
-                case 'listMonth':
-                    // code
-                    calendar.changeView('listMonth')     ///   listMonth
-                    break;
-                case 'listYear':
-                    // code
-                    calendar.changeView('listYear')     ///   listYear
-                    break;
-                case 'timelineWeek':
-                    // code
-                    calendar.changeView('timelineWeek')     ///   timelineWeek
-                    break;
-                case 'today':
-                    // code
-                    calendar.today();     ///   today
-                    break;
-                default:
-                // code
-            }
-        }
+function calendarBtnClicked(calendar, type) {
+    for (let i = 0; i < calendar.length; i++) {
+        // types: dayGridDay, dayGridWeek, dayGridMonth, resourceTimelineDay, resourceTimelineThreeDays, resourceTimelineFiveDays, timeGridWeek, timeGridDay, listDay, listWeek, listMonth, listYear, timelineWeek
+        if (type === 'today')
+            calendar[i].today();
+        else
+            calendar[i].changeView(type);
     }
 }
 
-/** init **/
-initSocketsForCalendars();
-initCalendars();
-initCalendarButtons();
+init();
+initButton();
 
-// observer.register('CoCreateCalendar', window, initCalendars);
-CoCreate.observer.init({
+Observer.init({
     name: 'CoCreateCalendar',
     observe: ['addedNodes'],
-    include: '[calendar_id]',
+    target: selector,
     callback: function (mutation) {
-        initCalendars(mutation.target)
+        init(mutation.target)
     }
 })
 
-// observer.register('CoCreateCalendar_btn', window, initCalendarButtons)
-CoCreate.observer.init({
+
+Observer.init({
     name: 'CoCreateCalendarBtn',
     observe: ['addedNodes'],
-    include: '[calendar_id][calendar-view]',
+    target: '[calendar-view]',
     callback: function (mutation) {
-        initCalendarButtons(mutation.target)
+        initButton(mutation.target)
     }
 })
