@@ -162,7 +162,12 @@
                     ></a>
                 </li>
                 <li class="margin-right:15px">
-                    <a calendar-view="today" calendar_id="calendar">T</a>
+                    <a
+                        calendar-view="today"
+                        calendar_id="calendar"
+                        calendar-closest="body; [plugin='fullcalendar']"
+                        >T</a
+                    >
                 </li>
             </ul>
         </div>
@@ -171,39 +176,35 @@
             class="position:fixed margin-top:50px"
             id="modal-viewport"
             content_id="content"></div>
-        <!-- Define filter-name to define field to filter results for calendar -->
-        <div
-            calendar_id="calendar"
-            filter-key="start_date"
-            filter-value="0"
-            filter-operator="$gt"></div>
-        <!--<div ></div>-->
         <div class="height:100vh position:relative" content_id="content">
-            <div id="calendar-container">
-                <div
-                    id="calendar"
-                    class="cal-container"
-                    array="test"
-                    event-key="name"
-                    calendar_id="calendar"
-                    filter-key=""
-                    filter-value=""
-                    pass_id="datatable">
-                    <a
-                        class="eventLink"
-                        actions="pass, openModal"
-                        modal-src="./form.html"
-                        pass-array="test"
-                        pass-object=""
-                        pass_to="form-fields"
-                        modal-width="320px"
-                        modal-height="100%"
-                        modal-color="#21618C"
-                        modal-header="false"
-                        modal-x=""
-                        modal-y="">
-                    </a>
-                </div>
+            <!-- Define filter-name to define field to filter results for calendar -->
+            <div
+                filter-key="start_date"
+                filter-value="0"
+                filter-operator="$gt"
+                filter-next></div>
+
+            <div
+                plugin="fullcalendar"
+                array="test"
+                event-key="name"
+                filter-key=""
+                filter-value=""
+                pass_id="datatable">
+                <a
+                    class="eventLink"
+                    actions="pass, openModal"
+                    modal-src="./form.html"
+                    pass-array="test"
+                    pass-object=""
+                    pass_to="form-fields"
+                    modal-width="320px"
+                    modal-height="100%"
+                    modal-color="#21618C"
+                    modal-header="false"
+                    modal-x=""
+                    modal-y="">
+                </a>
             </div>
         </div>
 
