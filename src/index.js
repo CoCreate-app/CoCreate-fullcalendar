@@ -84,29 +84,34 @@ function setData(element, data) {
 
     const eventSource = [];
 
-    data.object.forEach(function (item, index) {
-        let event = calendar.getEventById(data['object']);
+    for (let object of data.objects) {
+        let event = calendar.getEventById(object._id);
         if (event) {
-            if (item.displayName)
-                event.setProp('title', item.displayName);
+            if (data.filter && data.filter.remove) {
+                event.remove();
+                continue
+            }
 
-            if (item.allDay)
-                event.setAllDay(item.allDay);
+            if (object.displayName)
+                event.setProp('title', object.displayName);
 
-            if (item.startDate || item.startTime) {
+            if (object.allDay)
+                event.setAllDay(object.allDay);
+
+            if (object.startDate || object.startTime) {
                 let startDate, startTime
-                if (!item.startDate)
+                if (!object.startDate)
                     startDate = getDateString(event.start);
-                if (!item.startTime)
+                if (!object.startTime)
                     startTime = getTimeString(event.start);
                 event.setStart(startDate + 'T' + startTime);
             }
 
-            if (item.endDate || item.endTime) {
+            if (object.endDate || object.endTime) {
                 let endDate, endTime
-                if (!item.startDate)
+                if (!object.startDate)
                     startDate = getDateString(event.end);
-                if (!item.startTime)
+                if (!object.startTime)
                     endTime = getTimeString(event.end);
 
                 endDate = convertEndDateForRender(endDate, endTime, event.allDay);
@@ -116,24 +121,24 @@ function setData(element, data) {
             event = {};
             const { bgColor, textColor } = getRandomColor()
 
-            event.id = item['_id'];
+            event.id = object['_id'];
             event.title = getValueFromObject(data, calendar.displayName)
 
             event.textColor = textColor;
             event.backgroundColor = bgColor;
 
-            event.start = item.startDate;
-            event.end = convertEndDateForRender(item.endDate, item.endTime, item.allDay);
-            event.allDay = item.allDay;
+            event.start = object.startDate;
+            event.end = convertEndDateForRender(object.endDate, object.endTime, object.allDay);
+            event.allDay = object.allDay;
 
-            if (item.startTime)
-                event.start += 'T' + item.startTime;
-            if (item.endTime)
-                event.end += 'T' + item.endTime;
-            if (item.startDate && item.endDate)
+            if (object.startTime)
+                event.start += 'T' + object.startTime;
+            if (object.endTime)
+                event.end += 'T' + object.endTime;
+            if (object.startDate && object.endDate)
                 eventSource.push(event);
         }
-    })
+    }
 
     calendar.addEventSource(eventSource);
 }
@@ -165,8 +170,7 @@ function getRandomColor() {
     return { bgColor: bgColors[number], textColor: textColors[number] };
 }
 
-function removeEvent(calendar, object) {
-    // TODO: @cocreate/elements  needs to pass the calender element and trigger setValue, or renderValue
+function removeEvent(element) {
     const event = calendar.getEventById(object._id);
     event.remove();
 }
