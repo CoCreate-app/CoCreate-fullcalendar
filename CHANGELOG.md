@@ -1,3 +1,22 @@
+# [1.6.0](https://github.com/CoCreate-app/CoCreate-fullcalendar/compare/v1.5.29...v1.6.0) (2023-08-16)
+
+
+### Bug Fixes
+
+* calendar anchor tag formatting and refine calendar filters ([ac7f4af](https://github.com/CoCreate-app/CoCreate-fullcalendar/commit/ac7f4afcee53e183051ef37c7a850ee3d91eb601))
+* crud attributes renamed ([aec9835](https://github.com/CoCreate-app/CoCreate-fullcalendar/commit/aec98358348782fd07a26586542c67e4f0d5b45b))
+* Refactor code to set data for events and remove events ([79cdc1c](https://github.com/CoCreate-app/CoCreate-fullcalendar/commit/79cdc1cb179862ca5d3c47f494335a08306b176a))
+* Remove unnecessary dependencies in package.json ([6a28479](https://github.com/CoCreate-app/CoCreate-fullcalendar/commit/6a28479ad223b9ecff62a167df477afe75b780a7))
+* replace -target -selector ([7c1574f](https://github.com/CoCreate-app/CoCreate-fullcalendar/commit/7c1574f7469456e29b4fe87ceedaa1acd53764b1))
+* webpack.config and package.json make use of mode=production instead of process.env ([901dc6d](https://github.com/CoCreate-app/CoCreate-fullcalendar/commit/901dc6d288f1dbb7fa3f80a035a20996ba38839c))
+
+
+### Features
+
+* name attribute and variable renamed to key ([76cb9d4](https://github.com/CoCreate-app/CoCreate-fullcalendar/commit/76cb9d4e51ca7693bcd66fd91245cd297f7b5da9))
+* setValue and getValue functions, Refactor calendar initialization and event handling logic ([409bae5](https://github.com/CoCreate-app/CoCreate-fullcalendar/commit/409bae55969cc74336981547d4f8a08d2c35724d))
+* update template_id to render-selector attribute. update filter attributes to filter selector-attributes ([7d0b90c](https://github.com/CoCreate-app/CoCreate-fullcalendar/commit/7d0b90c315907ca0a18d43dd5a08776229b9f5d8))
+
 ## [1.5.29](https://github.com/CoCreate-app/CoCreate-fullcalendar/compare/v1.5.28...v1.5.29) (2023-06-14)
 
 
