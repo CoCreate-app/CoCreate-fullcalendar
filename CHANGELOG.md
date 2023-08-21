@@ -1,3 +1,12 @@
+## [1.7.1](https://github.com/CoCreate-app/CoCreate-fullcalendar/compare/v1.7.0...v1.7.1) (2023-08-21)
+
+
+### Bug Fixes
+
+* /dist/CoCreate.js updated to https://CoCreate.app/dist/CoCreate.js ([8ba0e1b](https://github.com/CoCreate-app/CoCreate-fullcalendar/commit/8ba0e1becfa1160ef99c5580496e3b73fb60ad54))
+* replace cdn with /dist ([8e12b05](https://github.com/CoCreate-app/CoCreate-fullcalendar/commit/8e12b05c8ac7dcf09fa538bc84fc302652fb5aa5))
+* update file uploader ([2ca0e55](https://github.com/CoCreate-app/CoCreate-fullcalendar/commit/2ca0e55cab9fdfc9ad07bcbf99c90fd1b9c107fd))
+
 # [1.7.0](https://github.com/CoCreate-app/CoCreate-fullcalendar/compare/v1.6.0...v1.7.0) (2023-08-17)
 
 
