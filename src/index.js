@@ -87,7 +87,7 @@ function setData(element, data) {
     for (let object of data.objects) {
         let event = calendar.getEventById(object._id);
         if (event) {
-            if (data.filter && data.filter.remove) {
+            if (data.$filter && data.$filter.remove) {
                 event.remove();
                 continue
             }
