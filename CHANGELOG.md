@@ -1,3 +1,10 @@
+## [1.8.2](https://github.com/CoCreate-app/CoCreate-fullcalendar/compare/v1.8.1...v1.8.2) (2023-09-17)
+
+
+### Bug Fixes
+
+* renamed filter to $filter ([6f2375f](https://github.com/CoCreate-app/CoCreate-fullcalendar/commit/6f2375f08c3e160fc3ea067107b8b84da0a5c53b))
+
 ## [1.8.1](https://github.com/CoCreate-app/CoCreate-fullcalendar/compare/v1.8.0...v1.8.1) (2023-08-21)
 
 
