@@ -1,3 +1,11 @@
+## [1.8.3](https://github.com/CoCreate-app/CoCreate-fullcalendar/compare/v1.8.2...v1.8.3) (2023-09-18)
+
+
+### Bug Fixes
+
+*  Add path and pathname ([87310f8](https://github.com/CoCreate-app/CoCreate-fullcalendar/commit/87310f8830054fed5dd7f52c8a1389d352dd608c))
+* Update CoCreate depndencies to latest versions ([30adde1](https://github.com/CoCreate-app/CoCreate-fullcalendar/commit/30adde1654c36700f5cc491f99b6bc71068bb873))
+
 ## [1.8.2](https://github.com/CoCreate-app/CoCreate-fullcalendar/compare/v1.8.1...v1.8.2) (2023-09-17)
 
 
