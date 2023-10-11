@@ -194,7 +194,7 @@ function eventClicked(data) {
         }
     })
 
-    link.runLink(eventLink);
+    link.open(eventLink);
 }
 
 // TODO: observe or someother means of adding functions to event element
@@ -277,7 +277,7 @@ function selectedDates(data) {
     localStorage.setItem('passedValues', JSON.stringify(passAttributes));
 
 
-    link.runLink(eventLink);
+    link.open(eventLink);
 }
 
 function initButton(element) {
