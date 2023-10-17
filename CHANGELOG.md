@@ -1,3 +1,10 @@
+## [1.8.7](https://github.com/CoCreate-app/CoCreate-fullcalendar/compare/v1.8.6...v1.8.7) (2023-10-17)
+
+
+### Bug Fixes
+
+* await getValue() ([d7bcd47](https://github.com/CoCreate-app/CoCreate-fullcalendar/commit/d7bcd4708e9a699c3a719abdfe8abe837655ead8))
+
 ## [1.8.6](https://github.com/CoCreate-app/CoCreate-fullcalendar/compare/v1.8.5...v1.8.6) (2023-10-14)
 
 
