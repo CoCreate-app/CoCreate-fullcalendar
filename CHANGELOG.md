@@ -1,3 +1,11 @@
+## [1.8.9](https://github.com/CoCreate-app/CoCreate-fullcalendar/compare/v1.8.8...v1.8.9) (2023-11-03)
+
+
+### Bug Fixes
+
+* favicon.ico path ([dfb90b9](https://github.com/CoCreate-app/CoCreate-fullcalendar/commit/dfb90b9397d497d607d0bc07f18f4d886bcba7e8))
+* update dependencies to the lates versions ([ab1c143](https://github.com/CoCreate-app/CoCreate-fullcalendar/commit/ab1c14335295e6bc11f5748d5a40f9f8943d4398))
+
 ## [1.8.8](https://github.com/CoCreate-app/CoCreate-fullcalendar/compare/v1.8.7...v1.8.8) (2023-10-25)
 
 
