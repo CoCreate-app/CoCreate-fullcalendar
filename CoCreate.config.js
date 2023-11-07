@@ -12,8 +12,7 @@ module.exports = {
                 "pathname": "/docs/fullcalendar/index.html",
                 "src": "{{./docs/index.html}}",
                 "host": [
-                    "*",
-                    "general.cocreate.app"
+                    "*"
                 ],
                 "directory": "fullcalendar",
                 "content-type": "{{content-type}}",
