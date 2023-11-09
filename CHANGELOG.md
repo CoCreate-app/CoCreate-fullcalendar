@@ -1,3 +1,11 @@
+## [1.8.10](https://github.com/CoCreate-app/CoCreate-fullcalendar/compare/v1.8.9...v1.8.10) (2023-11-09)
+
+
+### Bug Fixes
+
+* meta name typo ([2268af4](https://github.com/CoCreate-app/CoCreate-fullcalendar/commit/2268af43906df4e94d885a18253b0cc1116c110a))
+* update host ([0fc3836](https://github.com/CoCreate-app/CoCreate-fullcalendar/commit/0fc38360f38fd4752c3ea3546cfd9d9b01ce7109))
+
 ## [1.8.9](https://github.com/CoCreate-app/CoCreate-fullcalendar/compare/v1.8.8...v1.8.9) (2023-11-03)
 
 
