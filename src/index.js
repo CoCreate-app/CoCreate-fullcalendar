@@ -182,15 +182,15 @@ function eventClicked(data) {
     const calendar = event._calendar;
 
     let eventLink = calendar.el.querySelector('.eventLink');
-    if (eventLink.hasAttribute('pass-object')) {
-        eventLink.setAttribute('pass-object', eventId);
+    if (eventLink.hasAttribute('state-object')) {
+        eventLink.setAttribute('state-object', eventId);
     }
 
-    let els = eventLink.querySelectorAll("[pass-object]")
+    let els = eventLink.querySelectorAll("[state-object]")
 
     els.forEach((el) => {
-        if (!el.getAttribute('pass-object')) {
-            el.setAttribute('pass-object', eventId);
+        if (!el.getAttribute('state-object')) {
+            el.setAttribute('state-object', eventId);
         }
     })
 
@@ -244,37 +244,37 @@ function selectedDates(data) {
     if (calendar) return
 
     const eventLink = data.view.calendar.el.querySelector('.eventLink');
-    if (eventLink.hasAttribute('pass-object')) {
-        eventLink.setAttribute('pass-object', "");
+    if (eventLink.hasAttribute('state-object')) {
+        eventLink.setAttribute('state-object', "");
     }
-    let els = eventLink.querySelectorAll("[pass-object]")
+    let els = eventLink.querySelectorAll("[state-object]")
 
     els.forEach((el) => {
-        if (!el.getAttribute('pass-object')) {
-            el.setAttribute('pass-object', "");
+        if (!el.getAttribute('state-object')) {
+            el.setAttribute('state-object', "");
         }
     })
 
-    let passAttributes = [
+    let stateAttributes = [
         {
-            pass_value_to: 'startDate',
+            state_value_to: 'startDate',
             value: startDate
         },
         {
-            pass_value_to: 'endDate',
+            state_value_to: 'endDate',
             value: endDate
         },
         {
-            pass_value_to: 'startTime',
+            state_value_to: 'startTime',
             value: startTime
         },
         {
-            pass_value_to: 'endTime',
+            state_value_to: 'endTime',
             value: endTime
         }
     ]
 
-    localStorage.setItem('passedValues', JSON.stringify(passAttributes));
+    localStorage.setItem('statedValues', JSON.stringify(stateAttributes));
 
 
     link.open(eventLink);
