@@ -1,3 +1,16 @@
+# [1.10.0](https://github.com/CoCreate-app/CoCreate-fullcalendar/compare/v1.9.0...v1.10.0) (2023-11-25)
+
+
+### Bug Fixes
+
+* pass attributes renamed to state ([51b5c0c](https://github.com/CoCreate-app/CoCreate-fullcalendar/commit/51b5c0c0f979ceeebf655a42fe956f9b17dd2fa9))
+* update nav, edit button and css path ([37f0e8c](https://github.com/CoCreate-app/CoCreate-fullcalendar/commit/37f0e8cceccb6b8fedc8553f4e737a828d28b72b))
+
+
+### Features
+
+* upgrade dependencies for latest features and fixes ([79b5aac](https://github.com/CoCreate-app/CoCreate-fullcalendar/commit/79b5aac8357779ec691cf1ab3f02317596380088))
+
 # [1.9.0](https://github.com/CoCreate-app/CoCreate-fullcalendar/compare/v1.8.12...v1.9.0) (2023-11-19)
 
 
