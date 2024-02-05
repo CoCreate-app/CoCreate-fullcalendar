@@ -1,3 +1,10 @@
+## [1.11.1](https://github.com/CoCreate-app/CoCreate-fullcalendar/compare/v1.11.0...v1.11.1) (2024-02-05)
+
+
+### Bug Fixes
+
+* Removed https://cdn.cocreate.app/latest/CoCreate.min.css ([13c5f1a](https://github.com/CoCreate-app/CoCreate-fullcalendar/commit/13c5f1aae3f5c30abe3219b2d5186c6f74319c55))
+
 # [1.11.0](https://github.com/CoCreate-app/CoCreate-fullcalendar/compare/v1.10.0...v1.11.0) (2023-11-25)
 
 
