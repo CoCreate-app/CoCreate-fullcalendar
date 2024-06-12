@@ -1,3 +1,11 @@
+## [1.11.3](https://github.com/CoCreate-app/CoCreate-fullcalendar/compare/v1.11.2...v1.11.3) (2024-06-12)
+
+
+### Bug Fixes
+
+* bump cocreate dependencies ([96aad77](https://github.com/CoCreate-app/CoCreate-fullcalendar/commit/96aad77458e6194b8d96f72e2e65f4932c2bccfc))
+* svg icon class ([2c294ea](https://github.com/CoCreate-app/CoCreate-fullcalendar/commit/2c294ea16833502ef1938bb8f434ce8b2dbb0a78))
+
 ## [1.11.2](https://github.com/CoCreate-app/CoCreate-fullcalendar/compare/v1.11.1...v1.11.2) (2024-04-29)
 
 
