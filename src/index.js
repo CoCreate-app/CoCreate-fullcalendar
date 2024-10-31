@@ -313,7 +313,7 @@ initButton();
 Observer.init({
     name: 'CoCreateCalendar',
     observe: ['addedNodes'],
-    target: selector,
+    selector,
     callback: function (mutation) {
         init(mutation.target)
     }
@@ -323,7 +323,7 @@ Observer.init({
 Observer.init({
     name: 'CoCreateCalendarBtn',
     observe: ['addedNodes'],
-    target: '[calendar-view]',
+    selector: '[calendar-view]',
     callback: function (mutation) {
         initButton(mutation.target)
     }
