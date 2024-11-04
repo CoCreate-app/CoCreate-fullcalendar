@@ -1,3 +1,17 @@
+# [1.12.0](https://github.com/CoCreate-app/CoCreate-fullcalendar/compare/v1.11.3...v1.12.0) (2024-11-04)
+
+
+### Bug Fixes
+
+* observer taget has been renamed to selector ([8b13f2d](https://github.com/CoCreate-app/CoCreate-fullcalendar/commit/8b13f2d483b1c6a772c0163847f3901f826ee4a2))
+* pretier.config.js and file formating ([b852cdd](https://github.com/CoCreate-app/CoCreate-fullcalendar/commit/b852cddde4736a5029ec117095d00be5bc88c391))
+
+
+### Features
+
+* add prettier.config.js and format files ([92fdf72](https://github.com/CoCreate-app/CoCreate-fullcalendar/commit/92fdf72df821f278f3274b980e4490d99837c04b))
+* add prettier.config.js and format files ([4970eeb](https://github.com/CoCreate-app/CoCreate-fullcalendar/commit/4970eeb58f3ab1efa674c5fc173156b4cf25d3a9))
+
 ## [1.11.3](https://github.com/CoCreate-app/CoCreate-fullcalendar/compare/v1.11.2...v1.11.3) (2024-06-12)
 
 
