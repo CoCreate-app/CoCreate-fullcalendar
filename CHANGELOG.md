@@ -1,3 +1,10 @@
+## [1.12.1](https://github.com/CoCreate-app/CoCreate-fullcalendar/compare/v1.12.0...v1.12.1) (2025-01-18)
+
+
+### Bug Fixes
+
+* update filter-query-key ([3acaaa4](https://github.com/CoCreate-app/CoCreate-fullcalendar/commit/3acaaa4b5cd58b206506facb7e7424fa4e872900))
+
 # [1.12.0](https://github.com/CoCreate-app/CoCreate-fullcalendar/compare/v1.11.3...v1.12.0) (2024-11-04)
 
 
