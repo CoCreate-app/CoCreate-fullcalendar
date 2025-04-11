@@ -1,3 +1,10 @@
+## [1.12.2](https://github.com/CoCreate-app/CoCreate-fullcalendar/compare/v1.12.1...v1.12.2) (2025-04-11)
+
+
+### Bug Fixes
+
+* update observer observe param to type and and attributeName to attributeFilter ([ec29772](https://github.com/CoCreate-app/CoCreate-fullcalendar/commit/ec29772daa77f68e290e5f3fef4b2fc6aa3b560d))
+
 ## [1.12.1](https://github.com/CoCreate-app/CoCreate-fullcalendar/compare/v1.12.0...v1.12.1) (2025-01-18)
 
 
