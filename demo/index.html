@@ -153,7 +153,7 @@
 					<a
 						calendar-view="today"
 						calendar_id="calendar"
-						calendar-closest="body; [plugin='fullcalendar']"
+						calendar-query="$closest body; [plugin='fullcalendar']"
 						>T</a
 					>
 				</li>
@@ -169,7 +169,7 @@
 			<div
 				filter-query-key="start_date.$gt"
 				filter-query-value="0"
-				filter-next></div>
+				filter-query="$next"></div>
 
 			<div
 				plugin="fullcalendar"
