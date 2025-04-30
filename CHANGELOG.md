@@ -1,3 +1,13 @@
+## [1.12.3](https://github.com/CoCreate-app/CoCreate-fullcalendar/compare/v1.12.2...v1.12.3) (2025-04-30)
+
+
+### Bug Fixes
+
+* added css-loader ([ad33330](https://github.com/CoCreate-app/CoCreate-fullcalendar/commit/ad33330d0cb51381c970077ec1303dedaf134021))
+* update query attributes ([5da3c26](https://github.com/CoCreate-app/CoCreate-fullcalendar/commit/5da3c26ecfa2db47fb50ab8a49ff2f6ba9e4aac3))
+* updated cocreate modules versions ([1e7f883](https://github.com/CoCreate-app/CoCreate-fullcalendar/commit/1e7f8833093de38e64ec879e19265badadb7f7c7))
+* webpack.config and devdependencies ([5231e73](https://github.com/CoCreate-app/CoCreate-fullcalendar/commit/5231e73adb643ded074cfa6a862e2198a22348cf))
+
 ## [1.12.2](https://github.com/CoCreate-app/CoCreate-fullcalendar/compare/v1.12.1...v1.12.2) (2025-04-11)
 
 
